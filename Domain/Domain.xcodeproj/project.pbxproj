@@ -16,6 +16,10 @@
 		CB4934232067D06B004C49EA /* libCoreTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4934242067D06B004C49EA /* libCoreTestsSupport.a */; };
 		CBEA6E862067D9A70028D6FB /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E842067D9A60028D6FB /* Services.swift */; };
 		CBEA6E872067D9A70028D6FB /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E852067D9A60028D6FB /* Entities.swift */; };
+		CBEA6E97206822180028D6FB /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E96206822180028D6FB /* UserRepository.swift */; };
+		CBEA6E9A2068228E0028D6FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E992068228E0028D6FB /* User.swift */; };
+		CBEA6E9D206823870028D6FB /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E9C206823870028D6FB /* NetworkServiceProtocol.swift */; };
+		CBEA6EA2206827800028D6FB /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6EA1206827800028D6FB /* SessionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +62,10 @@
 		CBB63540205EAF9200340E97 /* libPlatformTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatformTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEA6E842067D9A60028D6FB /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		CBEA6E852067D9A60028D6FB /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		CBEA6E96206822180028D6FB /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		CBEA6E992068228E0028D6FB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CBEA6E9C206823870028D6FB /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		CBEA6EA1206827800028D6FB /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,9 +145,11 @@
 		CB03CA41205DC0D900DE0B91 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CBEA6E9B2068234E0028D6FB /* Protocols */,
+				CBEA6E98206822810028D6FB /* Entities */,
+				CBEA6E95206821E60028D6FB /* Services */,
 				CB03CA4B205DC0EB00DE0B91 /* Domain.swift */,
 				CBEA6E852067D9A60028D6FB /* Entities.swift */,
-				CBEA6E842067D9A60028D6FB /* Services.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -159,6 +169,32 @@
 				CB03CA6A205DC29E00DE0B91 /* FakeDomain.swift */,
 			);
 			path = TestsSupport;
+			sourceTree = "<group>";
+		};
+		CBEA6E95206821E60028D6FB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CBEA6E842067D9A60028D6FB /* Services.swift */,
+				CBEA6E96206822180028D6FB /* UserRepository.swift */,
+				CBEA6EA1206827800028D6FB /* SessionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CBEA6E98206822810028D6FB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CBEA6E992068228E0028D6FB /* User.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CBEA6E9B2068234E0028D6FB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CBEA6E9C206823870028D6FB /* NetworkServiceProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +313,10 @@
 			files = (
 				CBEA6E872067D9A70028D6FB /* Entities.swift in Sources */,
 				CB03CA4C205DC0EB00DE0B91 /* Domain.swift in Sources */,
+				CBEA6EA2206827800028D6FB /* SessionService.swift in Sources */,
+				CBEA6E9D206823870028D6FB /* NetworkServiceProtocol.swift in Sources */,
+				CBEA6E97206822180028D6FB /* UserRepository.swift in Sources */,
+				CBEA6E9A2068228E0028D6FB /* User.swift in Sources */,
 				CBEA6E862067D9A70028D6FB /* Services.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@ import UIKit
 import Domain
 
 
-protocol LoginViewDataRendering {
+protocol LoginViewDataRendering: class {
     var showsActivityIndicator: Bool { get set }
     var didTapButton: ((SessionCredentials) -> Void)? {get set}
 }
@@ -133,29 +133,27 @@ class LoginScreenFeature: LoginScreenInteracting {
             // self captured intentionaly
             self.sessionService.startSession(username: credentials.username, password: credentials.password)
         }
-        
-        viewControllerPresenter.present(viewController: loginViewController, completion: {
-            
-        })
     }
     
     private var observer: AnyObject?
     
     private func updateUIState(_ session:SessionState) {
+        guard let loginViewController = self.loginViewController else { return }
         switch session {
+        
         case .readyToStart:
-            self.loginViewController?.view.isUserInteractionEnabled = true
-            self.loginViewController?.showsActivityIndicator = false
+            self.viewControllerPresenter.present(viewController: loginViewController, completion: { })
+            fallthrough
+        case .failed(_): fallthrough
+        case .stopped:
+            loginViewController.view.isUserInteractionEnabled = true
+            loginViewController.showsActivityIndicator = false
         case .starting:
-            self.loginViewController?.view.isUserInteractionEnabled = false
-            self.loginViewController?.showsActivityIndicator = true
+            loginViewController.view.isUserInteractionEnabled = false
+            loginViewController.showsActivityIndicator = true
         case .started(_):
             self.didLogin()
-            self.loginViewController?.showsActivityIndicator = false
-        case .failed(_):
-            self.loginViewController?.view.isUserInteractionEnabled = true
-            self.loginViewController?.showsActivityIndicator = false
-            // TODO show error
+            loginViewController.showsActivityIndicator = false
         }
     }
     

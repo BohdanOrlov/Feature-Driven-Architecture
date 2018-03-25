@@ -15,11 +15,13 @@ struct MainFlow { // Flow is not testable at the moment because it acts as an as
     static func start(windowOwner: UIWindowOwner) {
         defineWindowFrames(screenBounds: UIScreen.main.bounds) { windowFrame in
             setupWindow(windowFrame: windowFrame, windowOwner: windowOwner) { (viewController: UIViewController) in
-                showLoginScreen(rootViewController: viewController) { [unowned viewController] in
-                    showTabBar(rootViewController: viewController) { tabControllers in
-                        showNavigationBar(rootViewController: tabControllers[Tab.posts.rawValue]!) { viewController in
-                            showPostsWithLogoutButton(viewController: viewController) {
-                                start(windowOwner: windowOwner)
+                setupNetworkService() { networkService in
+                    setupSessionService(networkService: networkService) { sessionService in
+                        showLoginScreen(rootViewController: viewController, sessionService: sessionService) { [unowned viewController] in
+                            showTabBar(rootViewController: viewController) { tabControllers in
+                                showNavigationBar(rootViewController: tabControllers[Tab.posts.rawValue]!) { viewController in
+                                    showPostsWithLogoutButton(viewController: viewController, sessionService: sessionService) { }
+                                }
                             }
                         }
                     }
@@ -45,11 +47,19 @@ fileprivate func setupWindow(windowFrame: CGRect, windowOwner: UIWindowOwner, di
 }
 
 
-fileprivate func showLoginScreen(rootViewController: UIViewController, didLogin: @escaping () -> Void) {
+fileprivate func showLoginScreen(rootViewController: UIViewController, sessionService: SessionServiceProtocol, didLogin: @escaping () -> Void) {
     _ = LoginScreenFeature(loginViewController: LoginViewController(),
                            viewControllerPresenter: ViewControllerPresenter(rootViewController: rootViewController),
-                           sessionService: SessionService(),
+                           sessionService: sessionService,
                            didLogin: didLogin)
+}
+
+fileprivate func setupNetworkService(didSetup: (NetworkRequestSending) -> Void) {
+    didSetup(NetworkService(hostURL: URL(string: "https://jsonplaceholder.typicode.com")!, session: URLSession(configuration: .default)))
+}
+
+fileprivate func setupSessionService(networkService: NetworkRequestSending, didSetup: (SessionServiceProtocol) -> Void) {
+    didSetup(SessionService(userProvider: UserRepository(networkService: networkService)))
 }
 
 fileprivate func showTabBar(rootViewController: UIViewController, didShowTabBar: @escaping ([String: UIViewController]) -> Void) { 
@@ -73,9 +83,9 @@ fileprivate func showNavigationBar(rootViewController: UIViewController,  didSho
                                  didShowNavigationBar: didShowNavigationBar)
 }
 
-fileprivate func showPostsWithLogoutButton(viewController: UIViewController, didLogout: @escaping () -> Void) {
+fileprivate func showPostsWithLogoutButton(viewController: UIViewController, sessionService: SessionServiceProtocol, didLogout: @escaping () -> Void) {
     showPosts(viewController: viewController) { buttonContainer in
-        showLogoutButton(buttonContainer: buttonContainer, didLogout: didLogout)
+        showLogoutButton(buttonContainer: buttonContainer, sessionService: sessionService, didLogout: didLogout)
     }
 }
 
@@ -86,8 +96,8 @@ fileprivate func showPosts(viewController: UIViewController, didPrepareButtonCon
                    didPrepareButtonContainer: didPrepareButtonContainer)
 }
 
-fileprivate func showLogoutButton(buttonContainer: UIView, didLogout: @escaping () -> Void) {
-    _ = LogoutFeature(viewPresenter: ViewPresenter(rootView: buttonContainer), didLogout: didLogout)
+fileprivate func showLogoutButton(buttonContainer: UIView, sessionService: SessionServiceProtocol, didLogout: @escaping () -> Void) {
+    _ = LogoutButtonFeature(viewPresenter: ViewPresenter(rootView: buttonContainer), sessionService: sessionService, didLogout: didLogout)
 }
 
 fileprivate func setupPushNotificationService(didSetupService: (PushNotificationServiceProtocol) -> Void) {

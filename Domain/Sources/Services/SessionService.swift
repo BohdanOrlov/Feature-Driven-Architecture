@@ -1,8 +1,8 @@
 //
-//  Services.swift
+//  SessionService.swift
 //  Domain
 //
-//  Created by Bohdan Orlov on 01/03/2018.
+//  Created by Bohdan Orlov on 25/03/2018.
 //  Copyright © 2018 Bohdan Orlov. All rights reserved.
 //
 
@@ -13,19 +13,24 @@ public enum SessionState {
     case readyToStart
     case starting
     case started(Session)
+    case stopped
     case failed(Error)
 }
 
 public protocol SessionServiceProtocol {
     var observableSessionState: ReadonlyObservable<SessionState> { get }
     func startSession(username: String, password: String)
+    func stopSession()
 }
 
 public class SessionService: SessionServiceProtocol {
     public lazy var observableSessionState = self.mutableObservableSessionState.makeReadonly()
     private let mutableObservableSessionState = MutableObservable<SessionState>(.readyToStart)
     
-    public init() {
+    private let userProvider: UserProviding
+    
+    public init(userProvider: UserProviding) {
+        self.userProvider = userProvider
     }
     
     public func startSession(username: String, password: String) {
@@ -34,38 +39,22 @@ public class SessionService: SessionServiceProtocol {
             return
         }
         self.mutableObservableSessionState.value = .starting
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) { [weak self] in
-            self?.mutableObservableSessionState.value = .started(Session(username: username))
+        self.userProvider.user(username: username) { [weak self] user in
+            if let user = user {
+                self?.mutableObservableSessionState.value = .started(Session(username: user.username))
+            } else {
+                self?.mutableObservableSessionState.value = .failed(NSError(domain: "", code: 0, userInfo: nil))
+                self?.mutableObservableSessionState.value = .readyToStart
+            }
         }
     }
-}
-
-
-public protocol PushNotificationServiceProtocol: class {
-    var didReceivePush: ((PushNotification) -> Void)? { get set }
-    func push(notification: PushNotification)
-}
-
-public class PushNotificationService: PushNotificationServiceProtocol {
-    public var didReceivePush: ((PushNotification) -> Void)?
     
-    public init() {}
-    
-    public func push(notification: PushNotification) {
-        self.didReceivePush?(notification)
-    }
-}
-
-public protocol postsStoring {
-    var posts: [Post] { get }
-}
-
-public class postsRepository: postsStoring {
-    public private(set) var posts = [Post]()
-    
-    public init() {
-        posts = (0...5).map {
-            Post(text: "Note \($0)")
+    public func stopSession() {
+        guard case .started(_) = self.observableSessionState.value else {
+            assertionFailure()
+            return
         }
+        self.mutableObservableSessionState.value = .stopped
+        self.mutableObservableSessionState.value = .readyToStart
     }
 }
