@@ -14,6 +14,8 @@
 		CB03CA6C205DC2DC00DE0B91 /* libDomainTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB03CA60205DC26F00DE0B91 /* libDomainTestsSupport.a */; };
 		CB4934212067D065004C49EA /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4934222067D065004C49EA /* libCore.a */; };
 		CB4934232067D06B004C49EA /* libCoreTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4934242067D06B004C49EA /* libCoreTestsSupport.a */; };
+		CBEA6E862067D9A70028D6FB /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E842067D9A60028D6FB /* Services.swift */; };
+		CBEA6E872067D9A70028D6FB /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E852067D9A60028D6FB /* Entities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +56,8 @@
 		CBB6353C205EAE9D00340E97 /* libPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB6353E205EAF8A00340E97 /* libPods-PlatformTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-PlatformTestsSupport.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB63540205EAF9200340E97 /* libPlatformTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatformTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBEA6E842067D9A60028D6FB /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		CBEA6E852067D9A60028D6FB /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				CB03CA4B205DC0EB00DE0B91 /* Domain.swift */,
+				CBEA6E852067D9A60028D6FB /* Entities.swift */,
+				CBEA6E842067D9A60028D6FB /* Services.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -269,7 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBEA6E872067D9A70028D6FB /* Entities.swift in Sources */,
 				CB03CA4C205DC0EB00DE0B91 /* Domain.swift in Sources */,
+				CBEA6E862067D9A70028D6FB /* Services.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
