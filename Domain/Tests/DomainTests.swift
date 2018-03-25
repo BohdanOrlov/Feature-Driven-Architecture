@@ -7,16 +7,16 @@
 //
 
 import XCTest
-import Platform
-import PlatformTestsSupport
+import Core
+import CoreTestsSupport
 import Domain
 import DomainTestsSupport
 
 class DomainTests: XCTestCase {
     
     override func setUp() { // This is a framework for Domain's tests
-        _ = Platform()
-        _ = FakePlatform()
+        _ = Core()
+        _ = FakeCore()
         _ = Domain()
         _ = FakeDomain()
         super.setUp()

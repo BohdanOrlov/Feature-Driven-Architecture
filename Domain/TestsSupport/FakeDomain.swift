@@ -7,14 +7,14 @@
 //
 
 import Foundation
-import Platform
-import PlatformTestsSupport
+import Core
+import CoreTestsSupport
 import Domain
 
 public class FakeDomain { // This is a framework for Domain's mocks and fakes and other tests syntax sugar
     public init() {
-        _ = Platform()
-        _ = FakePlatform()
+        _ = Core()
+        _ = FakeCore()
         _ = Domain()
     }
 }

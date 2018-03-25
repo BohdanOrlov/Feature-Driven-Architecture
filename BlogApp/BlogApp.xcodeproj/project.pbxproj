@@ -19,11 +19,9 @@
 		CB6CCF5D205D9AE2006BD708 /* libUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6CCF5E205D9AE2006BD708 /* libUI.a */; };
 		CBB63551205EB54700340E97 /* libBlogAppTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB63549205EB53100340E97 /* libBlogAppTestsSupport.a */; };
 		CBB63552205EB58100340E97 /* libDomainTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB63554205EB58100340E97 /* libDomainTestsSupport.a */; };
-		CBB63553205EB58100340E97 /* libPlatformTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB63555205EB58100340E97 /* libPlatformTestsSupport.a */; };
 		CBB63557205EB5C000340E97 /* BlogAppTestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB63556205EB5C000340E97 /* BlogAppTestsSupport.swift */; };
 		CBB63559205EB6BF00340E97 /* BlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB63558205EB6BF00340E97 /* BlogApp.swift */; };
 		CBB6355C205EB75200340E97 /* libUITestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB6355D205EB75200340E97 /* libUITestsSupport.a */; };
-		CBB6355E205EBBC900340E97 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB6CCF08205D8DD6006BD708 /* Info.plist */; };
 		F0A9F88CD1836FF633048211 /* Pods_BlogAppTestsSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0B066C05FD473FC6594FFC /* Pods_BlogAppTestsSupport.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,7 +130,6 @@
 			files = (
 				CBB6355C205EB75200340E97 /* libUITestsSupport.a in Frameworks */,
 				CBB63552205EB58100340E97 /* libDomainTestsSupport.a in Frameworks */,
-				CBB63553205EB58100340E97 /* libPlatformTestsSupport.a in Frameworks */,
 				F0A9F88CD1836FF633048211 /* Pods_BlogAppTestsSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +344,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBB6355E205EBBC900340E97 /* Info.plist in Resources */,
 				CB6CCF07205D8DD6006BD708 /* LaunchScreen.storyboard in Resources */,
 				CB6CCF04205D8DD6006BD708 /* Assets.xcassets in Resources */,
 				CB6CCF02205D8DD6006BD708 /* Main.storyboard in Resources */,

@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Platform
-import PlatformTestsSupport
+import Core
+import CoreTestsSupport
 import Domain
 import DomainTestsSupport
 import UI
@@ -17,8 +17,8 @@ import BlogApp
 
 public struct FakeBlogApp { // This is a framework for BlogApp's mocks and fakes and other tests syntax sugar
     public init() {
-        _ = Platform()
-        _ = FakePlatform()
+        _ = Core()
+        _ = FakeCore()
         _ = Domain()
         _ = FakeDomain()
         _ = UI()

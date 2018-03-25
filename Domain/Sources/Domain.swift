@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import Platform
+import Core
 
 public struct Domain {
     public init() { // This is a framework for Bussines Logic: defines entities and repositories, no third-party code here
-        _ = Platform()
+        _ = Core()
     }
 }

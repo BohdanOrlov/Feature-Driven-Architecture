@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import Platform
+import Core
 import Domain
 import UI
 
 public struct BlogApp { // Application acts as assembly point for Domain and UI, its a place for adaptors.
     public init() {
-        _ = Platform()
+        _ = Core()
         _ = Domain()
         _ = UI()
     }

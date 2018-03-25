@@ -11,7 +11,7 @@
       location = "group:Domain/Domain.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Platform/Platform.xcodeproj">
+      location = "group:Core/Core.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Podfile">

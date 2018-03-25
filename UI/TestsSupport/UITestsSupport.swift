@@ -7,13 +7,13 @@
 //
 
 import UI
-import Platform
-import PlatformTestsSupport
+import Core
+import CoreTestsSupport
 
 public struct FakeUI { // This is a framework UI's mocks and fakes and other tests syntax sugar
     public init() {
-        _ = Platform()
-        _ = FakePlatform()
+        _ = Core()
+        _ = FakeCore()
         _ = UI()
     }
 }

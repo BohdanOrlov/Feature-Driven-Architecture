@@ -12,8 +12,8 @@
 		CB03CA69205DC27C00DE0B91 /* libDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB03CA3F205DC0D900DE0B91 /* libDomain.a */; };
 		CB03CA6B205DC29E00DE0B91 /* FakeDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB03CA6A205DC29E00DE0B91 /* FakeDomain.swift */; };
 		CB03CA6C205DC2DC00DE0B91 /* libDomainTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB03CA60205DC26F00DE0B91 /* libDomainTestsSupport.a */; };
-		CBB63539205EAE7700340E97 /* libPlatformTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB6353A205EAE7700340E97 /* libPlatformTestsSupport.a */; };
-		CBB6353B205EAE9D00340E97 /* libPlatform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB6353C205EAE9D00340E97 /* libPlatform.a */; };
+		CB4934212067D065004C49EA /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4934222067D065004C49EA /* libCore.a */; };
+		CB4934232067D06B004C49EA /* libCoreTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4934242067D06B004C49EA /* libCoreTestsSupport.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,11 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		239CD9A1833D6654D748E9C0 /* Pods-Domain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Domain/Pods-Domain.debug.xcconfig"; sourceTree = "<group>"; };
-		26C1B68E5DE8FF7CCA091D85 /* Pods-DomainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-DomainTests/Pods-DomainTests.debug.xcconfig"; sourceTree = "<group>"; };
 		43DDC187217FAE4D879608E0 /* libPods-DomainTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DomainTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F54710AF33A7C408AAF744 /* libPods-Domain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Domain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FCF105BED30929FF327BC38 /* Pods-DomainTestsSupport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTestsSupport.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-DomainTestsSupport/Pods-DomainTestsSupport.debug.xcconfig"; sourceTree = "<group>"; };
 		A576E8EB9271409377C96214 /* libPods-DomainTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DomainTestsSupport.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB03CA3F205DC0D900DE0B91 /* libDomain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDomain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB03CA4B205DC0EB00DE0B91 /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
@@ -51,13 +48,12 @@
 		CB03CA57205DC1CB00DE0B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB03CA60205DC26F00DE0B91 /* libDomainTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDomainTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB03CA6A205DC29E00DE0B91 /* FakeDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDomain.swift; sourceTree = "<group>"; };
+		CB4934222067D065004C49EA /* libCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4934242067D06B004C49EA /* libCoreTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCoreTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB6353A205EAE7700340E97 /* libPlatformTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatformTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB6353C205EAE9D00340E97 /* libPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB6353E205EAF8A00340E97 /* libPods-PlatformTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-PlatformTestsSupport.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB63540205EAF9200340E97 /* libPlatformTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatformTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDCD5D2426DC3347A94F9313 /* Pods-DomainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-DomainTests/Pods-DomainTests.release.xcconfig"; sourceTree = "<group>"; };
-		D42B77B9C2A9CD1392F7C6C5 /* Pods-DomainTestsSupport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTestsSupport.release.xcconfig"; path = "../Pods/Target Support Files/Pods-DomainTestsSupport/Pods-DomainTestsSupport.release.xcconfig"; sourceTree = "<group>"; };
-		E2624A17BD3A5ABD54F9F736 /* Pods-Domain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Domain/Pods-Domain.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBB6353B205EAE9D00340E97 /* libPlatform.a in Frameworks */,
+				CB4934212067D065004C49EA /* libCore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,8 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4934232067D06B004C49EA /* libCoreTestsSupport.a in Frameworks */,
 				CB03CA69205DC27C00DE0B91 /* libDomain.a in Frameworks */,
-				CBB63539205EAE7700340E97 /* libPlatformTestsSupport.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +88,8 @@
 		9A91A2489CE9874E82769B55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB4934242067D06B004C49EA /* libCoreTestsSupport.a */,
+				CB4934222067D065004C49EA /* libCore.a */,
 				CBB63540205EAF9200340E97 /* libPlatformTestsSupport.a */,
 				CBB6353E205EAF8A00340E97 /* libPods-PlatformTestsSupport.a */,
 				CBB6353C205EAE9D00340E97 /* libPlatform.a */,
@@ -106,12 +104,6 @@
 		B580BE2E1FB4985495A8EE20 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				239CD9A1833D6654D748E9C0 /* Pods-Domain.debug.xcconfig */,
-				E2624A17BD3A5ABD54F9F736 /* Pods-Domain.release.xcconfig */,
-				26C1B68E5DE8FF7CCA091D85 /* Pods-DomainTests.debug.xcconfig */,
-				CDCD5D2426DC3347A94F9313 /* Pods-DomainTests.release.xcconfig */,
-				6FCF105BED30929FF327BC38 /* Pods-DomainTestsSupport.debug.xcconfig */,
-				D42B77B9C2A9CD1392F7C6C5 /* Pods-DomainTestsSupport.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -406,7 +398,6 @@
 		};
 		CB03CA49205DC0D900DE0B91 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 239CD9A1833D6654D748E9C0 /* Pods-Domain.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -422,7 +413,6 @@
 		};
 		CB03CA4A205DC0D900DE0B91 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2624A17BD3A5ABD54F9F736 /* Pods-Domain.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -437,7 +427,6 @@
 		};
 		CB03CA59205DC1CB00DE0B91 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26C1B68E5DE8FF7CCA091D85 /* Pods-DomainTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -453,7 +442,6 @@
 		};
 		CB03CA5A205DC1CB00DE0B91 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDCD5D2426DC3347A94F9313 /* Pods-DomainTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -468,7 +456,6 @@
 		};
 		CB03CA66205DC26F00DE0B91 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FCF105BED30929FF327BC38 /* Pods-DomainTestsSupport.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -483,7 +470,6 @@
 		};
 		CB03CA67205DC26F00DE0B91 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D42B77B9C2A9CD1392F7C6C5 /* Pods-DomainTestsSupport.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

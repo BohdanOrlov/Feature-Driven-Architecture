@@ -42,14 +42,14 @@ end
 #    end
 #end
 
-#target 'Platform' do
-#    project 'Platform/Platform.xcodeproj'
+#target 'Core' do
+#    project 'Core/Core.xcodeproj'
 #    
-#    target 'PlatformTestsSupport' do
+#    target 'CoreTestsSupport' do
 #        inherit! :search_paths
 #    end
 #
-#    target 'PlatformTests' do
+#    target 'CoreTests' do
 #        inherit! :search_paths
 #    end
 #end

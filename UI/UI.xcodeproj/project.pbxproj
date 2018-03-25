@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		2751E40797DC97D711573308 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8D53516379F3CAEC341146 /* Pods_UITests.framework */; };
 		A1801154E695C8BEA047E67E /* Pods_UITestsSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A336AEF459DC7EFD9815689 /* Pods_UITestsSupport.framework */; };
+		CB49341D2067CFAD004C49EA /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB49341E2067CFAD004C49EA /* libCore.a */; };
+		CB49341F2067CFB4004C49EA /* libCoreTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4934202067CFB4004C49EA /* libCoreTestsSupport.a */; };
 		CB6CCF5C205D9A9F006BD708 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CCF5B205D9A9F006BD708 /* UI.swift */; };
 		CB6CCF68205D9BC9006BD708 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CCF67205D9BC9006BD708 /* UITests.swift */; };
 		CBB63536205EAB6E00340E97 /* UITestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB63535205EAB6E00340E97 /* UITestsSupport.swift */; };
 		CBB63537205EAB9F00340E97 /* libUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6CCF4F205D9A7F006BD708 /* libUI.a */; };
 		CBB63538205EABA700340E97 /* libUITestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB6352C205EAB5700340E97 /* libUITestsSupport.a */; };
-		CBB63541205EB47200340E97 /* libPlatform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB63542205EB47200340E97 /* libPlatform.a */; };
-		CBB63543205EB47E00340E97 /* libPlatformTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB63544205EB47E00340E97 /* libPlatformTestsSupport.a */; };
 		EF524315840EB5C6A2C75515 /* Pods_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B958B5F7D32AC251EEB6E6F /* Pods_UI.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +41,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		029204B5512918764A4873A0 /* Pods-UI-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI-UITests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-UI-UITests/Pods-UI-UITests.release.xcconfig"; sourceTree = "<group>"; };
-		034C0C181808EB519C1FC6F3 /* Pods-UI-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI-UITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-UI-UITests/Pods-UI-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		08511E57AE921A62D8BF1CE1 /* Pods-UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UI.release.xcconfig"; path = "../Pods/Target Support Files/Pods-UI/Pods-UI.release.xcconfig"; sourceTree = "<group>"; };
 		0A336AEF459DC7EFD9815689 /* Pods_UITestsSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITestsSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A8D53516379F3CAEC341146 /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +51,8 @@
 		A2713538F621AF7082C66142 /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7E28040C64356DDDD713FA4 /* Pods-UITestsSupport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITestsSupport.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-UITestsSupport/Pods-UITestsSupport.debug.xcconfig"; sourceTree = "<group>"; };
 		C293ABD31D2E62D3C39191D2 /* libPods-UI-UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UI-UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB49341E2067CFAD004C49EA /* libCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4934202067CFB4004C49EA /* libCoreTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCoreTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6CCF4F205D9A7F006BD708 /* libUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6CCF5B205D9A9F006BD708 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		CB6CCF65205D9BC9006BD708 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBB63541205EB47200340E97 /* libPlatform.a in Frameworks */,
+				CB49341D2067CFAD004C49EA /* libCore.a in Frameworks */,
 				EF524315840EB5C6A2C75515 /* Pods_UI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBB63543205EB47E00340E97 /* libPlatformTestsSupport.a in Frameworks */,
+				CB49341F2067CFB4004C49EA /* libCoreTestsSupport.a in Frameworks */,
 				CBB63537205EAB9F00340E97 /* libUI.a in Frameworks */,
 				A1801154E695C8BEA047E67E /* Pods_UITestsSupport.framework in Frameworks */,
 			);
@@ -99,6 +99,8 @@
 		002BE6B6AF862B9BBCC1FA57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB4934202067CFB4004C49EA /* libCoreTestsSupport.a */,
+				CB49341E2067CFAD004C49EA /* libCore.a */,
 				CBB63544205EB47E00340E97 /* libPlatformTestsSupport.a */,
 				CBB63542205EB47200340E97 /* libPlatform.a */,
 				C293ABD31D2E62D3C39191D2 /* libPods-UI-UITests.a */,
@@ -114,8 +116,6 @@
 			children = (
 				55BAC3BB4B4538DA1496540B /* Pods-UI.debug.xcconfig */,
 				08511E57AE921A62D8BF1CE1 /* Pods-UI.release.xcconfig */,
-				034C0C181808EB519C1FC6F3 /* Pods-UI-UITests.debug.xcconfig */,
-				029204B5512918764A4873A0 /* Pods-UI-UITests.release.xcconfig */,
 				A2713538F621AF7082C66142 /* Pods-UITests.debug.xcconfig */,
 				40C5B1F80A4445C7F446720A /* Pods-UITests.release.xcconfig */,
 				B7E28040C64356DDDD713FA4 /* Pods-UITestsSupport.debug.xcconfig */,

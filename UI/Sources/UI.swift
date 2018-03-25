@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import Platform
+import Core
 import Layoutless
 
 public struct UI { // This is a framework for UI components and screen templates
     public init() {
-        _ = Platform()
+        _ = Core()
     }
 }
 

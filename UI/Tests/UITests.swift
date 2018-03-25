@@ -7,8 +7,8 @@
 //
 
 import XCTest
-import Platform
-import PlatformTestsSupport
+import Core
+import CoreTestsSupport
 import UI
 import UITestsSupport
 
@@ -16,8 +16,8 @@ class UITests: XCTestCase {
     
     override func setUp() { // This is a framework UI's visual regression and unit tests
         super.setUp()
-        _ = Platform()
-        _ = FakePlatform()
+        _ = Core()
+        _ = FakeCore()
         _ = UI()
         _ = FakeUI()
         // Put setup code here. This method is called before the invocation of each test method in the class.

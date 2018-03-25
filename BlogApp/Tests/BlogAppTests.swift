@@ -7,8 +7,8 @@
 //
 
 import XCTest
-import Platform
-import PlatformTestsSupport
+import Core
+import CoreTestsSupport
 import Domain
 import DomainTestsSupport
 import UI
@@ -18,8 +18,8 @@ import BlogApp
 class BlogAppTests: XCTestCase {  // This is a place for unit tests of BlogApp. End-to-end functional tests can be here or in an additional test target (preffered)
     
     override func setUp() {
-        _ = Platform()
-        _ = FakePlatform()
+        _ = Core()
+        _ = FakeCore()
         _ = Domain()
         _ = FakeDomain()
         _ = UI()
