@@ -23,17 +23,3 @@ public class PushNotificationService: PushNotificationServiceProtocol {
         self.didReceivePush?(notification)
     }
 }
-
-public protocol postsStoring {
-    var posts: [Post] { get }
-}
-
-public class postsRepository: postsStoring {
-    public private(set) var posts = [Post]()
-    
-    public init() {
-        posts = (0...5).map {
-            Post(text: "Note \($0)")
-        }
-    }
-}

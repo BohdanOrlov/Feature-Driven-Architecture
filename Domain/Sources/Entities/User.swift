@@ -9,8 +9,8 @@
 import Foundation
 
 public struct User: Codable {
+    
+    public var id: Int
     public var username: String
-    public init(username: String) {
-        self.username = username
-    }
+    
 }

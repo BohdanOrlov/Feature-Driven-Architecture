@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Domain
+import UI
 
 struct MainFlow { // Flow is not testable at the moment because it acts as an assembly point
     
@@ -17,10 +18,13 @@ struct MainFlow { // Flow is not testable at the moment because it acts as an as
             setupWindow(windowFrame: windowFrame, windowOwner: windowOwner) { (viewController: UIViewController) in
                 setupNetworkService() { networkService in
                     setupSessionService(networkService: networkService) { sessionService in
-                        showLoginScreen(rootViewController: viewController, sessionService: sessionService) { [unowned viewController] in
+                        showLoginScreen(rootViewController: viewController, sessionService: sessionService) { [unowned viewController] session in
                             showTabBar(rootViewController: viewController) { tabControllers in
                                 showNavigationBar(rootViewController: tabControllers[Tab.posts.rawValue]!) { viewController in
-                                    showPostsWithLogoutButton(viewController: viewController, sessionService: sessionService) { }
+                                    showPostsWithLogoutButton(viewController: viewController, userId: session.userId, networkService: networkService, sessionService: sessionService) { }
+                                }
+                                showNavigationBar(rootViewController: tabControllers[Tab.comments.rawValue]!) { viewController in
+                                    showComments(viewController: viewController, userId: session.userId, networkService: networkService)
                                 }
                             }
                         }
@@ -47,7 +51,7 @@ fileprivate func setupWindow(windowFrame: CGRect, windowOwner: UIWindowOwner, di
 }
 
 
-fileprivate func showLoginScreen(rootViewController: UIViewController, sessionService: SessionServiceProtocol, didLogin: @escaping () -> Void) {
+fileprivate func showLoginScreen(rootViewController: UIViewController, sessionService: SessionServiceProtocol, didLogin: @escaping (Session) -> Void) {
     _ = LoginScreenFeature(loginViewController: LoginViewController(),
                            viewControllerPresenter: ViewControllerPresenter(rootViewController: rootViewController),
                            sessionService: sessionService,
@@ -83,18 +87,31 @@ fileprivate func showNavigationBar(rootViewController: UIViewController,  didSho
                                  didShowNavigationBar: didShowNavigationBar)
 }
 
-fileprivate func showPostsWithLogoutButton(viewController: UIViewController, sessionService: SessionServiceProtocol, didLogout: @escaping () -> Void) {
-    showPosts(viewController: viewController) { buttonContainer in
+fileprivate func showPostsWithLogoutButton(viewController: UIViewController, userId: Int, networkService: NetworkRequestSending,
+                                           sessionService: SessionServiceProtocol,
+                                           didLogout: @escaping () -> Void) {
+    showPosts(viewController: viewController, userId: userId, networkService: networkService) { buttonContainer in
         showLogoutButton(buttonContainer: buttonContainer, sessionService: sessionService, didLogout: didLogout)
     }
 }
 
-fileprivate func showPosts(viewController: UIViewController, didPrepareButtonContainer: @escaping (UIView) -> Void) {
-    _ = PostsScreenFeature(postsViewController: PostsViewController(),
+fileprivate func showPosts(viewController: UIViewController, userId: Int, networkService: NetworkRequestSending, didPrepareButtonContainer: @escaping (UIView) -> Void) {
+    _ = PostsScreenFeature(postsViewController: StringsTableViewController(),
                            viewControllerPresenting: ViewControllerPresenter(rootViewController: viewController),
-                           postsRepository: postsRepository(),
+                           userId: userId,
+                           postsRepository: PostsRepository(networkService: networkService),
                    didPrepareButtonContainer: didPrepareButtonContainer)
 }
+
+fileprivate func showComments(viewController: UIViewController, userId: Int, networkService: NetworkRequestSending) {
+    let userCommentsRepository = UserCommentsRepository(postsRepository: PostsRepository(networkService: networkService),
+                                                        commentsRepository: CommentsRepository(networkService: networkService))
+    _ = CommentsScreenFeature(commentsViewController: StringsTableViewController(),
+                              viewControllerPresenting: ViewControllerPresenter(rootViewController: viewController),
+                              userId: userId,
+                              commentsRepository: userCommentsRepository)
+}
+
 
 fileprivate func showLogoutButton(buttonContainer: UIView, sessionService: SessionServiceProtocol, didLogout: @escaping () -> Void) {
     _ = LogoutButtonFeature(viewPresenter: ViewPresenter(rootView: buttonContainer), sessionService: sessionService, didLogout: didLogout)

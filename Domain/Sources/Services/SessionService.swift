@@ -41,7 +41,7 @@ public class SessionService: SessionServiceProtocol {
         self.mutableObservableSessionState.value = .starting
         self.userProvider.user(username: username) { [weak self] user in
             if let user = user {
-                self?.mutableObservableSessionState.value = .started(Session(username: user.username))
+                self?.mutableObservableSessionState.value = .started(Session(userId: user.id, username: user.username))
             } else {
                 self?.mutableObservableSessionState.value = .failed(NSError(domain: "", code: 0, userInfo: nil))
                 self?.mutableObservableSessionState.value = .readyToStart

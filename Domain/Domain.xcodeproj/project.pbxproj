@@ -14,6 +14,11 @@
 		CB03CA6C205DC2DC00DE0B91 /* libDomainTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB03CA60205DC26F00DE0B91 /* libDomainTestsSupport.a */; };
 		CB4934212067D065004C49EA /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4934222067D065004C49EA /* libCore.a */; };
 		CB4934232067D06B004C49EA /* libCoreTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4934242067D06B004C49EA /* libCoreTestsSupport.a */; };
+		CBC51BD120698E4E0030C99C /* CommentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BD020698E4E0030C99C /* CommentsRepository.swift */; };
+		CBC51BD320698F3C0030C99C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BD220698F3C0030C99C /* Comment.swift */; };
+		CBC51BD5206990460030C99C /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BD4206990460030C99C /* PostsRepository.swift */; };
+		CBC51BD7206990910030C99C /* UserCommentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BD6206990910030C99C /* UserCommentsRepository.swift */; };
+		CBC51BD9206994640030C99C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BD8206994640030C99C /* Post.swift */; };
 		CBEA6E862067D9A70028D6FB /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E842067D9A60028D6FB /* Services.swift */; };
 		CBEA6E872067D9A70028D6FB /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E852067D9A60028D6FB /* Entities.swift */; };
 		CBEA6E97206822180028D6FB /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E96206822180028D6FB /* UserRepository.swift */; };
@@ -60,6 +65,11 @@
 		CBB6353C205EAE9D00340E97 /* libPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB6353E205EAF8A00340E97 /* libPods-PlatformTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-PlatformTestsSupport.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB63540205EAF9200340E97 /* libPlatformTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatformTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBC51BD020698E4E0030C99C /* CommentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsRepository.swift; sourceTree = "<group>"; };
+		CBC51BD220698F3C0030C99C /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		CBC51BD4206990460030C99C /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
+		CBC51BD6206990910030C99C /* UserCommentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsRepository.swift; sourceTree = "<group>"; };
+		CBC51BD8206994640030C99C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CBEA6E842067D9A60028D6FB /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		CBEA6E852067D9A60028D6FB /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		CBEA6E96206822180028D6FB /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -176,6 +186,9 @@
 			children = (
 				CBEA6E842067D9A60028D6FB /* Services.swift */,
 				CBEA6E96206822180028D6FB /* UserRepository.swift */,
+				CBC51BD020698E4E0030C99C /* CommentsRepository.swift */,
+				CBC51BD4206990460030C99C /* PostsRepository.swift */,
+				CBC51BD6206990910030C99C /* UserCommentsRepository.swift */,
 				CBEA6EA1206827800028D6FB /* SessionService.swift */,
 			);
 			path = Services;
@@ -185,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				CBEA6E992068228E0028D6FB /* User.swift */,
+				CBC51BD8206994640030C99C /* Post.swift */,
+				CBC51BD220698F3C0030C99C /* Comment.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -312,11 +327,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBEA6E872067D9A70028D6FB /* Entities.swift in Sources */,
+				CBC51BD120698E4E0030C99C /* CommentsRepository.swift in Sources */,
+				CBC51BD7206990910030C99C /* UserCommentsRepository.swift in Sources */,
+				CBC51BD9206994640030C99C /* Post.swift in Sources */,
 				CB03CA4C205DC0EB00DE0B91 /* Domain.swift in Sources */,
 				CBEA6EA2206827800028D6FB /* SessionService.swift in Sources */,
 				CBEA6E9D206823870028D6FB /* NetworkServiceProtocol.swift in Sources */,
+				CBC51BD5206990460030C99C /* PostsRepository.swift in Sources */,
 				CBEA6E97206822180028D6FB /* UserRepository.swift in Sources */,
 				CBEA6E9A2068228E0028D6FB /* User.swift in Sources */,
+				CBC51BD320698F3C0030C99C /* Comment.swift in Sources */,
 				CBEA6E862067D9A70028D6FB /* Services.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

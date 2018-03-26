@@ -16,6 +16,7 @@
 		CBB63536205EAB6E00340E97 /* UITestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB63535205EAB6E00340E97 /* UITestsSupport.swift */; };
 		CBB63537205EAB9F00340E97 /* libUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6CCF4F205D9A7F006BD708 /* libUI.a */; };
 		CBB63538205EABA700340E97 /* libUITestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB6352C205EAB5700340E97 /* libUITestsSupport.a */; };
+		CBC51BCD20698B470030C99C /* StringsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BCC20698B470030C99C /* StringsTableViewController.swift */; };
 		CBEA6EA420682E0E0028D6FB /* UIControl+ClosureCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6EA320682E0E0028D6FB /* UIControl+ClosureCallback.swift */; };
 		EF524315840EB5C6A2C75515 /* Pods_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B958B5F7D32AC251EEB6E6F /* Pods_UI.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		CBB63535205EAB6E00340E97 /* UITestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestsSupport.swift; sourceTree = "<group>"; };
 		CBB63542205EB47200340E97 /* libPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB63544205EB47E00340E97 /* libPlatformTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatformTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBC51BCC20698B470030C99C /* StringsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsTableViewController.swift; sourceTree = "<group>"; };
 		CBEA6EA320682E0E0028D6FB /* UIControl+ClosureCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+ClosureCallback.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				CB6CCF5B205D9A9F006BD708 /* UI.swift */,
+				CBC51BCC20698B470030C99C /* StringsTableViewController.swift */,
 				CBEA6EA320682E0E0028D6FB /* UIControl+ClosureCallback.swift */,
 			);
 			path = Sources;
@@ -416,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBEA6EA420682E0E0028D6FB /* UIControl+ClosureCallback.swift in Sources */,
+				CBC51BCD20698B470030C99C /* StringsTableViewController.swift in Sources */,
 				CB6CCF5C205D9A9F006BD708 /* UI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

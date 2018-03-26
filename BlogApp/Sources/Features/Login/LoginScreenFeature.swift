@@ -38,10 +38,13 @@ class LoginViewController: UIViewController, LoginViewDataRendering {
     override func viewDidLoad() {
         self.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.stackView)
-        self.stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, constant: -60).isActive = true
+        self.stackView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive = true
         self.stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         self.stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         self.view.backgroundColor = UIColor.white
+        self.view.addSubview(self.activityIndicator)
+        self.button.rightAnchor.constraint(equalTo: self.activityIndicator.leftAnchor, constant: 40).isActive = true
+        self.button.centerYAnchor.constraint(equalTo: self.activityIndicator.centerYAnchor).isActive = true
         
     }
     
@@ -49,18 +52,17 @@ class LoginViewController: UIViewController, LoginViewDataRendering {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.alignment = .center
+        stackView.alignment = .fill
         stackView.spacing = 20
         stackView.addArrangedSubview(self.usernameField)
         stackView.addArrangedSubview(self.passwordField)
         stackView.addArrangedSubview(self.button)
-        stackView.addArrangedSubview(self.activityIndicator)
         return stackView
     }()
     
     private lazy var usernameField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Username"
+        textField.placeholder = "Username (Samantha)"
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .line
         return textField
@@ -116,12 +118,12 @@ class LoginScreenFeature: LoginScreenInteracting {
     private weak var loginViewController: LoginViewControlling?
     private let viewControllerPresenter: ViewControllerPresenting
     private let sessionService: SessionServiceProtocol
-    private let didLogin: () -> Void
+    private let didLogin: (Session) -> Void
     
     init(loginViewController: LoginViewControlling,
          viewControllerPresenter: ViewControllerPresenting,
          sessionService: SessionServiceProtocol,
-         didLogin: @escaping () -> Void) {
+         didLogin: @escaping (Session) -> Void) {
         self.loginViewController = loginViewController
         self.viewControllerPresenter = viewControllerPresenter
         self.sessionService = sessionService
@@ -151,8 +153,8 @@ class LoginScreenFeature: LoginScreenInteracting {
         case .starting:
             loginViewController.view.isUserInteractionEnabled = false
             loginViewController.showsActivityIndicator = true
-        case .started(_):
-            self.didLogin()
+        case .started(let session):
+            self.didLogin(session)
             loginViewController.showsActivityIndicator = false
         }
     }

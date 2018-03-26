@@ -9,13 +9,11 @@
 import Foundation
 import UIKit
 
-public struct Post {
-    public let text: String
-}
-
 public struct Session {
+    public let userId: Int
     public let username: String
-    public init(username: String) {
+    public init(userId: Int, username: String) {
+        self.userId = userId
         self.username = username
     }
 }
