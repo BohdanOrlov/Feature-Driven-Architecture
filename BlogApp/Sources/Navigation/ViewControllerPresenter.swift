@@ -24,6 +24,10 @@ class ViewControllerPresenter: ViewControllerPresenting {
     }
     
     func present(viewController: UIViewController, completion: @escaping () -> Void) {
+        if viewController.presentingViewController != nil || viewController.parent != nil {
+            self.rewind(to: viewController, completion: completion)
+            return
+        }
         guard let rootViewController = self.rootViewController else {
             assertionFailure()
             completion()
@@ -48,6 +52,14 @@ class ViewControllerPresenter: ViewControllerPresenting {
             presentingViewController.dismiss(animated: true, completion: completion)
         } else {
             viewController.remove()
+        }
+    }
+    
+    private func rewind(to viewController: UIViewController, completion: @escaping () -> Void) {
+        if viewController.presentedViewController != nil {
+            viewController.dismiss(animated: true, completion: completion)
+        } else {
+            completion()
         }
     }
 }

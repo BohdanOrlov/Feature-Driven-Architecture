@@ -117,7 +117,7 @@
 		CBEA6E6D2067D4180028D6FB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CBEA6E712067D4D50028D6FB /* NavigationBarFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarFeature.swift; sourceTree = "<group>"; };
 		CBEA6E722067D4D50028D6FB /* TabBarFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarFeature.swift; sourceTree = "<group>"; };
-		CBEA6E752067D4F20028D6FB /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewControllerPresenter.swift; path = ../../../../ArchitectureSpike/Architecture/ViewControllerPresenter.swift; sourceTree = "<group>"; };
+		CBEA6E752067D4F20028D6FB /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		CBEA6E762067D5490028D6FB /* ViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
 		CBEA6E792067D62B0028D6FB /* PushNotificationButtonFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationButtonFeature.swift; sourceTree = "<group>"; };
 		CBEA6E7A2067D62B0028D6FB /* RestartPushNotificationFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestartPushNotificationFeature.swift; sourceTree = "<group>"; };
