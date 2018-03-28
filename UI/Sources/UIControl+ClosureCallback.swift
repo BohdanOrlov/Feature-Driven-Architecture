@@ -25,6 +25,6 @@ extension UIControl {
     public func add (for controlEvents: UIControlEvents, _ closure: @escaping ()->()) {
         let sleeve = ClosureBox(closure)
         addTarget(sleeve, action: #selector(ClosureBox.invoke), for: controlEvents)
-        objc_setAssociatedObject(self, String(format: "[%d]", arc4random()), sleeve, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        objc_setAssociatedObject(self, String(format: "[%d]", arc4random()), sleeve, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
 }

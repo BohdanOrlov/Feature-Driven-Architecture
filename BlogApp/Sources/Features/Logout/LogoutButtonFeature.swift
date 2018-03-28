@@ -8,10 +8,12 @@ import Core
 import Domain
 
 class LogoutButtonFeature {
+    private let viewPresenter: ViewPresenting
     private let sessionService: SessionServiceProtocol
     private let didLogout: () -> Void
     
     init(viewPresenter: ViewPresenter, sessionService: SessionServiceProtocol, didLogout: @escaping () -> Void) {
+        self.viewPresenter = viewPresenter
         self.sessionService = sessionService
         self.didLogout = didLogout
         self.observer = self.sessionService.observableSessionState.observeAndCall(weakify(self, type(of: self).updateUIState))
@@ -35,6 +37,7 @@ class LogoutButtonFeature {
         case .started(_):
             self.button.isEnabled = true
         case .stopped:
+            self.viewPresenter.dismiss(view: self.button)
             self.didLogout()
             fallthrough
         case .readyToStart: fallthrough

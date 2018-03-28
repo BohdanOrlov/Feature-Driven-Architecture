@@ -14,36 +14,35 @@ import UI
 struct MainFlow { // Flow is not testable at the moment because it acts as an assembly point
     
     static func start(windowOwner: UIWindowOwner) {
-        defineWindowFrames(screenBounds: UIScreen.main.bounds) { windowFrame in
-            setupWindow(windowFrame: windowFrame, windowOwner: windowOwner) { (viewController: UIViewController) in
-                setupNetworkService() { networkService in
-                    setupSessionService(networkService: networkService) { sessionService in
-                        showLoginScreen(rootViewController: viewController, sessionService: sessionService) { [unowned viewController] session in
-                            showTabBar(rootViewController: viewController) { tabControllers in
-                                showNavigationBar(rootViewController: tabControllers[Tab.posts.rawValue]!) { viewController in
-                                    showPostsWithLogoutButton(viewController: viewController, userId: session.userId, networkService: networkService, sessionService: sessionService) { }
-                                }
-                                showNavigationBar(rootViewController: tabControllers[Tab.comments.rawValue]!) { viewController in
-                                    showComments(viewController: viewController, userId: session.userId, networkService: networkService)
-                                }
-                            }
+        makeWindows(windowOwner: windowOwner) { viewController in
+            setupServices { networkService, sessionService, pushNotificationService in
+                showLoginScreen(rootViewController: viewController, sessionService: sessionService) { [unowned viewController] session in
+                    showTabBar(rootViewController: viewController) { tabControllers in
+                        showNavigationBar(rootViewController: tabControllers[Tab.posts.rawValue]!) { viewController in
+                            showPostsWithLogoutButton(viewController: viewController, userId: session.userId, networkService: networkService, sessionService: sessionService) { }
+                        }
+                        showNavigationBar(rootViewController: tabControllers[Tab.comments.rawValue]!) { viewController in
+                            showComments(viewController: viewController, userId: session.userId, networkService: networkService)
                         }
                     }
                 }
-                setupPushNotificationService() { service in
-                    setupRestartPushNotificationHandling(pushNotificationService: service) {
-                        start(windowOwner: windowOwner)
-                    }
-                    setupSendPushNotificationButton(rootViewController: viewController, pushNotificationService: service)
+                showSendPushNotificationButton(rootViewController: viewController, pushNotificationService: pushNotificationService)
+                setupRestartPushNotificationHandling(pushNotificationService: pushNotificationService) {
+                    start(windowOwner: windowOwner)
                 }
             }
         }
     }
 }
 
+fileprivate func makeWindows(windowOwner: UIWindowOwner, didSetupWindow: @escaping (UIViewController) -> Void) {
+    defineWindowFrames(screenBounds: UIScreen.main.bounds) { windowFrame in
+        setupWindow(windowFrame: windowFrame, windowOwner: windowOwner, didSetupWindow: didSetupWindow)
+    }
+}
 
 fileprivate func defineWindowFrames(screenBounds: CGRect, didDefineScreenFrames: (CGRect) -> Void) {
-    _ = WindowFrameFeature(screenBounds: screenBounds, splitScreen: true, didDefineScreenFrames: didDefineScreenFrames)
+    _ = WindowFrameFeature(screenBounds: screenBounds, splitScreen: false, didDefineScreenFrames: didDefineScreenFrames)
 }
 
 fileprivate func setupWindow(windowFrame: CGRect, windowOwner: UIWindowOwner, didSetupWindow: @escaping (UIViewController) -> Void) {
@@ -56,6 +55,16 @@ fileprivate func showLoginScreen(rootViewController: UIViewController, sessionSe
                            viewControllerPresenter: ViewControllerPresenter(rootViewController: rootViewController),
                            sessionService: sessionService,
                            didLogin: didLogin)
+}
+
+fileprivate func setupServices(didSetup: (NetworkRequestSending, SessionServiceProtocol, PushNotificationServiceProtocol) -> Void) {
+    setupNetworkService() { networkService in
+        setupSessionService(networkService: networkService) { sessionService in
+            setupPushNotificationService() { pushNotificationService in
+                didSetup(networkService, sessionService, pushNotificationService)
+            }
+        }
+    }
 }
 
 fileprivate func setupNetworkService(didSetup: (NetworkRequestSending) -> Void) {
@@ -126,7 +135,7 @@ fileprivate func setupRestartPushNotificationHandling(pushNotificationService: P
     _ = RestartPushNotificationFeature(pushNotificationService:pushNotificationService, didReceiveRestartRequest: didReceiveRestartRequest)
 }
 
-fileprivate func setupSendPushNotificationButton(rootViewController: UIViewController,
+fileprivate func showSendPushNotificationButton(rootViewController: UIViewController,
                                                  pushNotificationService: PushNotificationServiceProtocol) {
     _ = PushNotificationButtonFeature(rootViewController: rootViewController, pushNotificationService:pushNotificationService)
 }
