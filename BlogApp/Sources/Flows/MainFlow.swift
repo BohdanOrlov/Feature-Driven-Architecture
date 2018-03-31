@@ -16,8 +16,8 @@ struct MainFlow {
     static func start(windowOwner: UIWindowOwner) {
         makeWindows(windowOwner: windowOwner) { viewController in
             setupServices { networkService, sessionService, pushNotificationService in
-                MainUIFlow.start(viewController: viewController, sessionService: sessionService, networkService: networkService)
-                RestartPushNotificationFlow.start(viewController: viewController, pushNotificationService: pushNotificationService) {
+                startMainUIFlow(viewController, sessionService, networkService)
+                startPushNotificationHandlingFlow(viewController, pushNotificationService) {
                     start(windowOwner: windowOwner)
                 }
             }
@@ -39,6 +39,9 @@ struct MainFlow {
             setupWindow(windowFrame, windowOwner, didSetupWindow)
         }
     }
+    
+    static var startMainUIFlow = MainUIFlow.start
+    static var startPushNotificationHandlingFlow = PushNotificationHandlingFlow.start
     
     static var defineWindowFrames = WindowFrameFeature.launch
     static var setupWindow = WindowFeature.launch

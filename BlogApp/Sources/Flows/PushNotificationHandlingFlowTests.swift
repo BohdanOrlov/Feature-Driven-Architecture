@@ -17,16 +17,16 @@ import UITestsSupport
 @testable import BlogApp
 import BlogAppTestsSupport
 
-class RestartPushNotificationFlowTests: XCTestCase {
+class PushNotificationHandlingFlowTests: XCTestCase {
     
     func test_GivenMockedLauncher_WhenFlowStarted_ThenShowSendPushNotificationButtonCalled() {
         stubAllLaunchers()
         var called = false
-        RestartPushNotificationFlow.showSendPushNotificationButton = {_,_ in
+        PushNotificationHandlingFlow.showSendPushNotificationButton = {_,_ in
             called = true
         }
         
-        RestartPushNotificationFlow.start(viewController: UIViewController(),
+        PushNotificationHandlingFlow.start(viewController: UIViewController(),
                                           pushNotificationService: FakePushNotificationService()) { }
         
         XCTAssert(called)
@@ -35,18 +35,18 @@ class RestartPushNotificationFlowTests: XCTestCase {
     func test_GivenMockedLauncher_WhenFlowStarted_ThenSetupRestartPushNotificationHandlingCalled() {
         stubAllLaunchers()
         var called = false
-        RestartPushNotificationFlow.setupRestartPushNotificationHandling = {_,_ in
+        PushNotificationHandlingFlow.setupRestartPushNotificationHandling = {_,_ in
             called = true
         }
         
-        RestartPushNotificationFlow.start(viewController: UIViewController(),
+        PushNotificationHandlingFlow.start(viewController: UIViewController(),
                                           pushNotificationService: FakePushNotificationService()) { }
         
         XCTAssert(called)
     }
     
     func stubAllLaunchers() {
-        RestartPushNotificationFlow.setupRestartPushNotificationHandling = {_,_ in }
-        RestartPushNotificationFlow.showSendPushNotificationButton = {_,_ in }
+        PushNotificationHandlingFlow.setupRestartPushNotificationHandling = {_,_ in }
+        PushNotificationHandlingFlow.showSendPushNotificationButton = {_,_ in }
     }
 }

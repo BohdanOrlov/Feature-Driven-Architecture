@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Domain
 
-struct RestartPushNotificationFlow {
+struct PushNotificationHandlingFlow {
     
     static func start(viewController: UIViewController, pushNotificationService: PushNotificationServiceProtocol, didReceiveRestartPush: @escaping () -> Void) {
         showSendPushNotificationButton(viewController, pushNotificationService)
