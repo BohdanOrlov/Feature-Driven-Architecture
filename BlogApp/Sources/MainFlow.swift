@@ -42,16 +42,16 @@ fileprivate func makeWindows(windowOwner: UIWindowOwner, didSetupWindow: @escapi
 }
 
 fileprivate func defineWindowFrames(screenBounds: CGRect, didDefineScreenFrames: (CGRect) -> Void) {
-    _ = WindowFrameFeature(screenBounds: screenBounds, splitScreen: false, didDefineScreenFrames: didDefineScreenFrames)
+    WindowFrameFeature(screenBounds: screenBounds, splitScreen: false, didDefineScreenFrames: didDefineScreenFrames)
 }
 
 fileprivate func setupWindow(windowFrame: CGRect, windowOwner: UIWindowOwner, didSetupWindow: @escaping (UIViewController) -> Void) {
-    _ = WindowFeature(windowFrame: windowFrame, windowOwner: windowOwner, didSetupWindow: didSetupWindow)
+    WindowFeature(windowFrame: windowFrame, windowOwner: windowOwner, didSetupWindow: didSetupWindow)
 }
 
 
 fileprivate func showLoginScreen(rootViewController: UIViewController, sessionService: SessionServiceProtocol, didLogin: @escaping (Session) -> Void) {
-    _ = LoginScreenFeature(loginViewController: LoginViewController(),
+    LoginScreenFeature(loginViewController: LoginViewController(),
                            viewControllerPresenter: ViewControllerPresenter(rootViewController: rootViewController),
                            sessionService: sessionService,
                            didLogin: didLogin)
@@ -76,7 +76,7 @@ fileprivate func setupSessionService(networkService: NetworkRequestSending, didS
 }
 
 fileprivate func showTabBar(rootViewController: UIViewController, didShowTabBar: @escaping ([String: UIViewController]) -> Void) { 
-    _ = TabBarFeature(tabs: Tab.all.map { $0.rawValue },
+    TabBarFeature(tabs: Tab.all.map { $0.rawValue },
                           tabBarController: UITabBarController(),
                           viewControllerPresenting: ViewControllerPresenter(rootViewController: rootViewController),
                           didShowTabBar: didShowTabBar)
@@ -91,7 +91,7 @@ fileprivate enum Tab: String {
 }
 
 fileprivate func showNavigationBar(rootViewController: UIViewController,  didShowNavigationBar: @escaping (UIViewController) -> Void) {
-    _ = NavigationBarFeature(viewControllerPresenter: ViewControllerPresenter(rootViewController: rootViewController),
+    NavigationBarFeature(viewControllerPresenter: ViewControllerPresenter(rootViewController: rootViewController),
                                  navigationController: UINavigationController(),
                                  didShowNavigationBar: didShowNavigationBar)
 }
@@ -105,7 +105,7 @@ fileprivate func showPostsWithLogoutButton(viewController: UIViewController, use
 }
 
 fileprivate func showPosts(viewController: UIViewController, userId: Int, networkService: NetworkRequestSending, didPrepareButtonContainer: @escaping (UIView) -> Void) {
-    _ = PostsScreenFeature(postsViewController: StringsTableViewController(),
+    PostsScreenFeature(postsViewController: StringsTableViewController(),
                            viewControllerPresenting: ViewControllerPresenter(rootViewController: viewController),
                            userId: userId,
                            postsRepository: PostsRepository(networkService: networkService),
@@ -115,7 +115,7 @@ fileprivate func showPosts(viewController: UIViewController, userId: Int, networ
 fileprivate func showComments(viewController: UIViewController, userId: Int, networkService: NetworkRequestSending) {
     let userCommentsRepository = UserCommentsRepository(postsRepository: PostsRepository(networkService: networkService),
                                                         commentsRepository: CommentsRepository(networkService: networkService))
-    _ = CommentsScreenFeature(commentsViewController: StringsTableViewController(),
+    CommentsScreenFeature(commentsViewController: StringsTableViewController(),
                               viewControllerPresenting: ViewControllerPresenter(rootViewController: viewController),
                               userId: userId,
                               commentsRepository: userCommentsRepository)
@@ -123,7 +123,7 @@ fileprivate func showComments(viewController: UIViewController, userId: Int, net
 
 
 fileprivate func showLogoutButton(buttonContainer: UIView, sessionService: SessionServiceProtocol, didLogout: @escaping () -> Void) {
-    _ = LogoutButtonFeature(viewPresenter: ViewPresenter(rootView: buttonContainer), sessionService: sessionService, didLogout: didLogout)
+    LogoutButtonFeature(viewPresenter: ViewPresenter(rootView: buttonContainer), sessionService: sessionService, didLogout: didLogout)
 }
 
 fileprivate func setupPushNotificationService(didSetupService: (PushNotificationServiceProtocol) -> Void) {
@@ -132,10 +132,10 @@ fileprivate func setupPushNotificationService(didSetupService: (PushNotification
 
 fileprivate func setupRestartPushNotificationHandling(pushNotificationService: PushNotificationServiceProtocol,
                                                didReceiveRestartRequest: @escaping () -> Void) {
-    _ = RestartPushNotificationFeature(pushNotificationService:pushNotificationService, didReceiveRestartRequest: didReceiveRestartRequest)
+    RestartPushNotificationFeature(pushNotificationService:pushNotificationService, didReceiveRestartRequest: didReceiveRestartRequest)
 }
 
 fileprivate func showSendPushNotificationButton(rootViewController: UIViewController,
                                                  pushNotificationService: PushNotificationServiceProtocol) {
-    _ = PushNotificationButtonFeature(rootViewController: rootViewController, pushNotificationService:pushNotificationService)
+    PushNotificationButtonFeature(rootViewController: rootViewController, pushNotificationService:pushNotificationService)
 }

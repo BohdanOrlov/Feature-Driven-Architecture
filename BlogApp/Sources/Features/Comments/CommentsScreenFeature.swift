@@ -12,6 +12,7 @@ import Domain
 import UI
 
 class CommentsScreenFeature {
+    @discardableResult
     init(commentsViewController: StringsTableViewController,
          viewControllerPresenting: ViewControllerPresenting,
          userId: Int,

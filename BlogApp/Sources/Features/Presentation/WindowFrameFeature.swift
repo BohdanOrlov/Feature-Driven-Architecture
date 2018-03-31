@@ -6,7 +6,7 @@ import Foundation
 import UIKit
 
 class WindowFrameFeature {
-    
+    @discardableResult
     init(screenBounds: CGRect, splitScreen: Bool, didDefineScreenFrames: (CGRect) -> Void) {
         guard splitScreen else {
             didDefineScreenFrames(screenBounds)

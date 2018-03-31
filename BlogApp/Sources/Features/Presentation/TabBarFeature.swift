@@ -6,6 +6,7 @@ import Foundation
 import UIKit
 
 class TabBarFeature {
+    @discardableResult
     init(tabs: [String],
          tabBarController: UITabBarController,
          viewControllerPresenting: ViewControllerPresenting,

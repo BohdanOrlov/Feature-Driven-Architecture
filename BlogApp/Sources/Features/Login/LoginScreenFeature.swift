@@ -120,6 +120,7 @@ class LoginScreenFeature: LoginScreenInteracting {
     private let sessionService: SessionServiceProtocol
     private let didLogin: (Session) -> Void
     
+    @discardableResult
     init(loginViewController: LoginViewControlling,
          viewControllerPresenter: ViewControllerPresenting,
          sessionService: SessionServiceProtocol,

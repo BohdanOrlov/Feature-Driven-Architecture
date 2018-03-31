@@ -10,6 +10,7 @@ protocol UIWindowOwner: class {
 }
 
 class WindowFeature {
+    @discardableResult
     init(windowFrame: CGRect, windowOwner: UIWindowOwner, didSetupWindow: @escaping (UIViewController) -> Void) {
         let windowKey = windowFrame.debugDescription
         let window = UIWindow(frame: windowFrame)

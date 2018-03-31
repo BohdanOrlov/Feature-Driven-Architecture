@@ -12,6 +12,7 @@ class LogoutButtonFeature {
     private let sessionService: SessionServiceProtocol
     private let didLogout: () -> Void
     
+    @discardableResult
     init(viewPresenter: ViewPresenter, sessionService: SessionServiceProtocol, didLogout: @escaping () -> Void) {
         self.viewPresenter = viewPresenter
         self.sessionService = sessionService

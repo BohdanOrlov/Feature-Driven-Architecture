@@ -8,6 +8,7 @@ import Domain
 import UI
 
 class PostsScreenFeature {
+    @discardableResult
     init(postsViewController: StringsTableViewController,
          viewControllerPresenting: ViewControllerPresenting,
          userId: Int,

@@ -8,6 +8,8 @@ import Domain
 
 
 class PushNotificationButtonFeature {
+    
+    @discardableResult
     init(rootViewController: UIViewController, pushNotificationService: PushNotificationServiceProtocol) {
         guard let window = rootViewController.view.window else {
             assertionFailure()

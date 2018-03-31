@@ -6,6 +6,7 @@ import Foundation
 import UIKit
 
 class NavigationBarFeature {
+    @discardableResult
     init(viewControllerPresenter: ViewControllerPresenting,
          navigationController: UINavigationController,
          didShowNavigationBar: @escaping (UIViewController) -> Void) {

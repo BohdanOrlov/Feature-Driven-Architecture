@@ -8,6 +8,8 @@ import Domain
 
 
 class RestartPushNotificationFeature {
+    
+    @discardableResult
     init(pushNotificationService: PushNotificationServiceProtocol, didReceiveRestartRequest: @escaping () -> Void) {
         pushNotificationService.didReceivePush = { notification in
             if case .restart = notification {
