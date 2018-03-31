@@ -18,10 +18,14 @@ class LogoutButtonFeature {
         self.sessionService = sessionService
         self.didLogout = didLogout
         self.observer = self.sessionService.observableSessionState.observeAndCall(weakify(self, type(of: self).updateUIState))
-        viewPresenter.present(view: self.button)
+        let button = self.makeButton()
+        self.button = button
+        viewPresenter.present(view: button)
     }
     
-    private lazy var button: UIButton = {
+    private weak var button: UIButton?
+    
+    func makeButton() -> UIButton {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints  = false
         button.setTitle("Logout", for: .normal)
@@ -31,20 +35,23 @@ class LogoutButtonFeature {
         }
         button.setTitleColor(.black, for: .normal)
         return button
-    }()
+    }
     
     private func updateUIState(_ session:SessionState) {
+        guard let button = self.button else {
+            return
+        }
         switch session {
         case .started(_):
-            self.button.isEnabled = true
+            button.isEnabled = true
         case .stopped:
-            self.viewPresenter.dismiss(view: self.button)
+            self.viewPresenter.dismiss(view: button)
             self.didLogout()
             fallthrough
         case .readyToStart: fallthrough
         case .starting: fallthrough
         case .failed(_):
-            self.button.isEnabled = false
+            button.isEnabled = false
         }
     }
     
