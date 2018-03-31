@@ -14,6 +14,7 @@ import DomainTestsSupport
 import UI
 import UITestsSupport
 import BlogApp
+import BlogAppTestsSupport
 
 class BlogAppTests: XCTestCase {  // This is a place for unit tests of BlogApp. End-to-end functional tests can be here or in an additional test target (preffered)
     
@@ -24,6 +25,8 @@ class BlogAppTests: XCTestCase {  // This is a place for unit tests of BlogApp. 
         _ = FakeDomain()
         _ = UI()
         _ = FakeUI()
+        _ = BlogApp()
+        _ = FakeBlogApp()
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -46,3 +49,4 @@ class BlogAppTests: XCTestCase {  // This is a place for unit tests of BlogApp. 
     }
     
 }
+

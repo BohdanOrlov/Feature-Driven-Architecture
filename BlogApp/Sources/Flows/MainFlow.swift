@@ -26,7 +26,7 @@ struct MainFlow {
     
     private static func setupServices(didSetup: (NetworkRequestSending, SessionServiceProtocol, PushNotificationServiceProtocol) -> Void) {
         setupNetworkService() { networkService in
-            setupSessionService(networkService: networkService) { sessionService in
+            setupSessionService(networkService) { sessionService in
                 setupPushNotificationService() { pushNotificationService in
                     didSetup(networkService, sessionService, pushNotificationService)
                 }
@@ -35,29 +35,16 @@ struct MainFlow {
     }
     
     private static func makeWindows(windowOwner: UIWindowOwner, didSetupWindow: @escaping (UIViewController) -> Void) {
-        defineWindowFrames(screenBounds: UIScreen.main.bounds) { windowFrame in
-            setupWindow(windowFrame: windowFrame, windowOwner: windowOwner, didSetupWindow: didSetupWindow)
+        defineWindowFrames(UIScreen.main.bounds) { windowFrame in
+            setupWindow(windowFrame, windowOwner, didSetupWindow)
         }
     }
     
-    private static func defineWindowFrames(screenBounds: CGRect, didDefineScreenFrames: (CGRect) -> Void) {
-        WindowFrameFeature(screenBounds: screenBounds, splitScreen: true, didDefineScreenFrames: didDefineScreenFrames)
-    }
+    static var defineWindowFrames = WindowFrameFeature.launch
+    static var setupWindow = WindowFeature.launch
     
-    private static func setupWindow(windowFrame: CGRect, windowOwner: UIWindowOwner, didSetupWindow: @escaping (UIViewController) -> Void) {
-        WindowFeature(windowFrame: windowFrame, windowOwner: windowOwner, didSetupWindow: didSetupWindow)
-    }
-    
-    private static func setupNetworkService(didSetup: (NetworkRequestSending) -> Void) {
-        didSetup(NetworkService(hostURL: URL(string: "https://jsonplaceholder.typicode.com")!, session: URLSession(configuration: .default)))
-    }
-    
-    private static func setupSessionService(networkService: NetworkRequestSending, didSetup: (SessionServiceProtocol) -> Void) {
-        didSetup(SessionService(userProvider: UserRepository(networkService: networkService)))
-    }
-    
-    private static func setupPushNotificationService(didSetupService: (PushNotificationServiceProtocol) -> Void) {
-        didSetupService(PushNotificationService())
-    }
+    static var setupNetworkService = NetworkService.shared
+    static var setupSessionService = SessionService.shared
+    static var setupPushNotificationService = PushNotificationService.shared
 }
 

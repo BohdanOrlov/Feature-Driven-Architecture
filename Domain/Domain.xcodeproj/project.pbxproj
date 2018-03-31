@@ -19,7 +19,8 @@
 		CBC51BD5206990460030C99C /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BD4206990460030C99C /* PostsRepository.swift */; };
 		CBC51BD7206990910030C99C /* UserCommentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BD6206990910030C99C /* UserCommentsRepository.swift */; };
 		CBC51BD9206994640030C99C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BD8206994640030C99C /* Post.swift */; };
-		CBEA6E862067D9A70028D6FB /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E842067D9A60028D6FB /* Services.swift */; };
+		CBCBBDD020700A5B009B1CDF /* FakePushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDCF20700A5B009B1CDF /* FakePushNotificationService.swift */; };
+		CBEA6E862067D9A70028D6FB /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E842067D9A60028D6FB /* PushNotificationService.swift */; };
 		CBEA6E872067D9A70028D6FB /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E852067D9A60028D6FB /* Entities.swift */; };
 		CBEA6E97206822180028D6FB /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E96206822180028D6FB /* UserRepository.swift */; };
 		CBEA6E9A2068228E0028D6FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E992068228E0028D6FB /* User.swift */; };
@@ -70,7 +71,8 @@
 		CBC51BD4206990460030C99C /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
 		CBC51BD6206990910030C99C /* UserCommentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommentsRepository.swift; sourceTree = "<group>"; };
 		CBC51BD8206994640030C99C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		CBEA6E842067D9A60028D6FB /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		CBCBBDCF20700A5B009B1CDF /* FakePushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakePushNotificationService.swift; sourceTree = "<group>"; };
+		CBEA6E842067D9A60028D6FB /* PushNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
 		CBEA6E852067D9A60028D6FB /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		CBEA6E96206822180028D6FB /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		CBEA6E992068228E0028D6FB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -184,7 +186,8 @@
 		CBEA6E95206821E60028D6FB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CBEA6E842067D9A60028D6FB /* Services.swift */,
+				CBEA6E842067D9A60028D6FB /* PushNotificationService.swift */,
+				CBCBBDCF20700A5B009B1CDF /* FakePushNotificationService.swift */,
 				CBEA6E96206822180028D6FB /* UserRepository.swift */,
 				CBC51BD020698E4E0030C99C /* CommentsRepository.swift */,
 				CBC51BD4206990460030C99C /* PostsRepository.swift */,
@@ -337,7 +340,7 @@
 				CBEA6E97206822180028D6FB /* UserRepository.swift in Sources */,
 				CBEA6E9A2068228E0028D6FB /* User.swift in Sources */,
 				CBC51BD320698F3C0030C99C /* Comment.swift in Sources */,
-				CBEA6E862067D9A70028D6FB /* Services.swift in Sources */,
+				CBEA6E862067D9A70028D6FB /* PushNotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB03CA6B205DC29E00DE0B91 /* FakeDomain.swift in Sources */,
+				CBCBBDD020700A5B009B1CDF /* FakePushNotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

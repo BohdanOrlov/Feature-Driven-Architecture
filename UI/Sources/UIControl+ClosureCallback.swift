@@ -24,8 +24,8 @@ class ClosureBox {
 
 extension UIControl {
     public func add (for controlEvents: UIControlEvents, _ closure: @escaping ()->()) {
-        let sleeve = ClosureBox(closure)
-        addTarget(sleeve, action: #selector(ClosureBox.invoke), for: controlEvents)
-        objc_setAssociatedObject(self, UUID().uuidString, sleeve, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        let closureBox = ClosureBox(closure)
+        addTarget(closureBox, action: #selector(ClosureBox.invoke), for: controlEvents)
+        objc_setAssociatedObject(self, UUID().uuidString, closureBox, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
 }

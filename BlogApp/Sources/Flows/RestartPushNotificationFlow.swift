@@ -13,18 +13,10 @@ import Domain
 struct RestartPushNotificationFlow {
     
     static func start(viewController: UIViewController, pushNotificationService: PushNotificationServiceProtocol, didReceiveRestartPush: @escaping () -> Void) {
-        showSendPushNotificationButton(rootViewController: viewController, pushNotificationService: pushNotificationService)
-        setupRestartPushNotificationHandling(pushNotificationService: pushNotificationService, didReceiveRestartRequest: didReceiveRestartPush)
+        showSendPushNotificationButton(viewController, pushNotificationService)
+        setupRestartPushNotificationHandling(pushNotificationService, didReceiveRestartPush)
     }
     
-    private static func setupRestartPushNotificationHandling(pushNotificationService: PushNotificationServiceProtocol,
-                                                          didReceiveRestartRequest: @escaping () -> Void) {
-        RestartPushNotificationFeature(pushNotificationService:pushNotificationService, didReceiveRestartRequest: didReceiveRestartRequest)
-    }
-    
-    private static func showSendPushNotificationButton(rootViewController: UIViewController,
-                                                    pushNotificationService: PushNotificationServiceProtocol) {
-        PushNotificationButtonFeature(rootViewController: rootViewController, pushNotificationService:pushNotificationService)
-    }
-    
+    static var setupRestartPushNotificationHandling = RestartPushNotificationFeature.launch
+    static var showSendPushNotificationButton = PushNotificationButtonFeature.launch
 }
