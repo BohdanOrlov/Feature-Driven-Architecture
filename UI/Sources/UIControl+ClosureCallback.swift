@@ -26,6 +26,6 @@ extension UIControl {
     public func add (for controlEvents: UIControlEvents, _ closure: @escaping ()->()) {
         let closureBox = ClosureBox(closure)
         addTarget(closureBox, action: #selector(ClosureBox.invoke), for: controlEvents)
-        objc_setAssociatedObject(self, UUID().uuidString, closureBox, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        self.retain(closureBox)
     }
 }
