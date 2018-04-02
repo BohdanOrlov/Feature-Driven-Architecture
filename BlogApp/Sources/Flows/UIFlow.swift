@@ -1,5 +1,5 @@
 //
-//  MainUIFlow.swift
+//  UIFlow.swift
 //  BlogApp
 //
 //  Created by Bohdan Orlov on 31/03/2018.
@@ -11,7 +11,7 @@ import UIKit
 import Domain
 import UI
 
-struct MainUIFlow {
+struct UIFlow {
     
     static func start(viewController: UIViewController, sessionService: SessionServiceProtocol, networkService: NetworkRequestSending) {
         showLoginScreen(viewController, sessionService) { [unowned viewController] session in
