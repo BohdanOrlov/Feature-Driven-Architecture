@@ -119,26 +119,24 @@ class LoginScreenFeature: LoginScreenInteracting {
     private let viewControllerPresenter: ViewControllerPresenting
     private let sessionService: SessionServiceProtocol
     private let didLogin: (Session) -> Void
+    private var observer: AnyObject?
     
     @discardableResult
     init(loginViewController: LoginViewControlling,
          viewControllerPresenter: ViewControllerPresenting,
          sessionService: SessionServiceProtocol,
          didLogin: @escaping (Session) -> Void) {
-        self.loginViewController = loginViewController
         self.viewControllerPresenter = viewControllerPresenter
         self.sessionService = sessionService
         self.didLogin = didLogin
-        self.observer = self.sessionService.observableSessionState.observeAndCall(weakify(self, type(of: self).updateUIState))
+        self.loginViewController = loginViewController
         
-
-        self.loginViewController?.didTapButton = {  credentials in
-            // self captured intentionaly
-            self.sessionService.startSession(username: credentials.username, password: credentials.password)
+        self.loginViewController?.retain(self)
+        self.loginViewController?.didTapButton = { [weak self] credentials in
+            self?.sessionService.startSession(username: credentials.username, password: credentials.password)
         }
+        self.observer = self.sessionService.observableSessionState.observeAndCall(weakify(self, type(of: self).updateUIState))
     }
-    
-    private var observer: AnyObject?
     
     private func updateUIState(_ session:SessionState) {
         guard let loginViewController = self.loginViewController else { return }
@@ -159,6 +157,4 @@ class LoginScreenFeature: LoginScreenInteracting {
             loginViewController.showsActivityIndicator = false
         }
     }
-    
 }
-

@@ -17,10 +17,9 @@ class LogoutButtonFeature {
         self.viewPresenter = viewPresenter
         self.sessionService = sessionService
         self.didLogout = didLogout
+        self.button = self.makeButton()
+        self.button?.retain(self)
         self.observer = self.sessionService.observableSessionState.observeAndCall(weakify(self, type(of: self).updateUIState))
-        let button = self.makeButton()
-        self.button = button
-        viewPresenter.present(view: button)
     }
     
     private weak var button: UIButton?
@@ -29,9 +28,8 @@ class LogoutButtonFeature {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints  = false
         button.setTitle("Logout", for: .normal)
-        button.add(for: .touchUpInside) {
-            // self captured intentionaly
-            self.sessionService.stopSession()
+        button.add(for: .touchUpInside) { [weak self] in
+            self?.sessionService.stopSession()
         }
         button.setTitleColor(.black, for: .normal)
         return button
@@ -43,6 +41,7 @@ class LogoutButtonFeature {
         }
         switch session {
         case .started(_):
+            self.viewPresenter.present(view: button)
             button.isEnabled = true
         case .stopped:
             self.viewPresenter.dismiss(view: button)
