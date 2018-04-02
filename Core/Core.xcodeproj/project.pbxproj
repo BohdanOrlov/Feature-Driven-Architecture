@@ -12,6 +12,7 @@
 		CB4934192067CD94004C49EA /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4934182067CD94004C49EA /* Core.swift */; };
 		CB49341B2067CEB8004C49EA /* libCoreTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4933FE2067CD2D004C49EA /* libCoreTestsSupport.a */; };
 		CB49341C2067CEBD004C49EA /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4933EE2067CD06004C49EA /* libCore.a */; };
+		CBCBBDF3207297BF009B1CDF /* KeyPathBuildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDF2207297BF009B1CDF /* KeyPathBuildable.swift */; };
 		CBEA6E892067D9CC0028D6FB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E882067D9CC0028D6FB /* Observable.swift */; };
 		CBEA6E902067EB8B0028D6FB /* Weakify.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E8F2067EB8A0028D6FB /* Weakify.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		CB49340F2067CD4D004C49EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB4934162067CD63004C49EA /* CoreTestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTestsSupport.swift; sourceTree = "<group>"; };
 		CB4934182067CD94004C49EA /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		CBCBBDF2207297BF009B1CDF /* KeyPathBuildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPathBuildable.swift; sourceTree = "<group>"; };
 		CBEA6E882067D9CC0028D6FB /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		CBEA6E8F2067EB8A0028D6FB /* Weakify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weakify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 		CB4933F02067CD06004C49EA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CBCBBDF2207297BF009B1CDF /* KeyPathBuildable.swift */,
 				CBEA6E8F2067EB8A0028D6FB /* Weakify.swift */,
 				CB4934182067CD94004C49EA /* Core.swift */,
 				CBEA6E882067D9CC0028D6FB /* Observable.swift */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBCBBDF3207297BF009B1CDF /* KeyPathBuildable.swift in Sources */,
 				CBEA6E902067EB8B0028D6FB /* Weakify.swift in Sources */,
 				CBEA6E892067D9CC0028D6FB /* Observable.swift in Sources */,
 				CB4934192067CD94004C49EA /* Core.swift in Sources */,

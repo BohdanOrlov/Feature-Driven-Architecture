@@ -15,7 +15,7 @@ class WindowFeature {
         let windowKey = windowFrame.debugDescription
         let window = UIWindow(frame: windowFrame)
         let oldWindow = windowOwner.windows[windowKey]
-        let rootViewController = ViewController()
+        let rootViewController = RootViewController()
         rootViewController.didLoad = {
             if let oldWindow = oldWindow {
                 if let viewController = oldWindow.rootViewController {

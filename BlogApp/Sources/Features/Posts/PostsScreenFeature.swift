@@ -7,15 +7,17 @@ import UIKit
 import Domain
 import UI
 
+typealias PostsRenderingViewController = UIViewController & StringsRendering & SubviewContainerProviding
+
 class PostsScreenFeature {
     @discardableResult
-    init(postsViewController: StringsTableViewController,
+    init(postsViewController: PostsRenderingViewController,
          viewControllerPresenting: ViewControllerPresenting,
          userId: Int,
          postsRepository: PostsProviding,
          didPrepareButtonContainer: @escaping (UIView) -> Void) {
         
-        postsViewController.didPrepareButtonContainer = didPrepareButtonContainer
+        postsViewController.didPrepareSubviewsContainer = didPrepareButtonContainer
         postsRepository.posts(userId: userId) { [weak postsViewController] posts in
             postsViewController?.data = .init(strings: posts.map { $0.body })
         }

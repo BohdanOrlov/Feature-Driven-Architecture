@@ -9,39 +9,34 @@
 import Foundation
 import UIKit
 
-public class StringsTableViewController: UIViewController {
-    public struct Data {
-        let strings: [String]
-        
-        public init(strings: [String]) {
-            self.strings = strings
-        }
-    }
+public protocol StringsRendering {
+    var data: StringsData { get set }
+}
+
+public struct StringsData {
+    let strings: [String]
     
-    public var data: Data = Data(strings: []) {
+    public init(strings: [String]) {
+        self.strings = strings
+    }
+}
+
+public typealias StringsRenderingViewController = StringsRendering & UIViewController
+
+public class StringsTableViewController: UIViewController, StringsRendering {
+    public var data: StringsData = StringsData(strings: []) {
         didSet {
-            self.tablewView.reloadData()
+            self.tableView.reloadData()
         }
     }
-    
-    public var didPrepareButtonContainer: ((UIView) -> Void)?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(self.tablewView)
-        self.tablewView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        self.tablewView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        self.tablewView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        self.tablewView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        let buttonContainer = UIView()
-        buttonContainer.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(buttonContainer)
-        buttonContainer.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
-        buttonContainer.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        self.didPrepareButtonContainer?(buttonContainer)
+        let layout = self.tableView.fillingParent()
+        layout.layout(in: self.view)
     }
     
-    private lazy var tablewView: UITableView = {
+    private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self

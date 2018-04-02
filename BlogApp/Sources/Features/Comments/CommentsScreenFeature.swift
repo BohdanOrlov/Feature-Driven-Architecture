@@ -13,7 +13,7 @@ import UI
 
 class CommentsScreenFeature {
     @discardableResult
-    init(commentsViewController: StringsTableViewController,
+    init(commentsViewController: StringsRenderingViewController,
          viewControllerPresenting: ViewControllerPresenting,
          userId: Int,
          commentsRepository: UserCommentsRepository) {

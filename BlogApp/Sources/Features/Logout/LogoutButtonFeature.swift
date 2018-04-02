@@ -17,7 +17,8 @@ class LogoutButtonFeature {
         self.viewPresenter = viewPresenter
         self.sessionService = sessionService
         self.didLogout = didLogout
-        self.button = self.makeButton()
+        let button = self.makeButton()
+        self.button = button
         self.button?.retain(self)
         self.observer = self.sessionService.observableSessionState.observeAndCall(weakify(self, type(of: self).updateUIState))
     }
@@ -27,6 +28,7 @@ class LogoutButtonFeature {
     func makeButton() -> UIButton {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints  = false
+        button.heightAnchor.constraint(equalToConstant: 45).isActive = true
         button.setTitle("Logout", for: .normal)
         button.add(for: .touchUpInside) { [weak self] in
             self?.sessionService.stopSession()

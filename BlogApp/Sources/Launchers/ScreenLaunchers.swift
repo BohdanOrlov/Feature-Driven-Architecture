@@ -24,7 +24,7 @@ extension LoginScreenFeature {
 
 extension PostsScreenFeature {
     static func launch(viewController: UIViewController, userId: Int, networkService: NetworkRequestSending, didPrepareButtonContainer: @escaping (UIView) -> Void) {
-        PostsScreenFeature(postsViewController: StringsTableViewController(),
+        PostsScreenFeature(postsViewController: PostsViewController(),
                            viewControllerPresenting: ViewControllerPresenter(rootViewController: viewController),
                            userId: userId,
                            postsRepository: PostsRepository(networkService: networkService),

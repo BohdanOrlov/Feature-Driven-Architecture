@@ -13,7 +13,7 @@ class TabBarFeature {
          didShowTabBar: @escaping ([String: UIViewController]) -> Void) {
         var controllersByTabs = [String: UIViewController]()
         let rootViewControllers: [UIViewController] = tabs.map {
-            let viewController = ViewController()
+            let viewController = RootViewController()
             viewController.title = $0
             controllersByTabs[$0] = viewController
             return viewController

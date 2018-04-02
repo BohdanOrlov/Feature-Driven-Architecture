@@ -29,8 +29,9 @@
 		CBCBBDEB20702324009B1CDF /* ComponentLaunchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDEA20702324009B1CDF /* ComponentLaunchers.swift */; };
 		CBCBBDED207026B7009B1CDF /* ServiceFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDEC207026B7009B1CDF /* ServiceFactories.swift */; };
 		CBCBBDEF207284C0009B1CDF /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = CBCBBDEE207284C0009B1CDF /* db.json */; };
+		CBCBBDF520729A54009B1CDF /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDF420729A54009B1CDF /* PostsViewController.swift */; };
 		CBEA6E6B2067D3C00028D6FB /* WindowFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E6A2067D3BF0028D6FB /* WindowFeature.swift */; };
-		CBEA6E6E2067D4180028D6FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E6D2067D4180028D6FB /* ViewController.swift */; };
+		CBEA6E6E2067D4180028D6FB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E6D2067D4180028D6FB /* RootViewController.swift */; };
 		CBEA6E732067D4D50028D6FB /* NavigationBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E712067D4D50028D6FB /* NavigationBarFeature.swift */; };
 		CBEA6E742067D4D50028D6FB /* TabBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E722067D4D50028D6FB /* TabBarFeature.swift */; };
 		CBEA6E772067D5490028D6FB /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E762067D5490028D6FB /* ViewPresenter.swift */; };
@@ -131,8 +132,9 @@
 		CBCBBDEA20702324009B1CDF /* ComponentLaunchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentLaunchers.swift; sourceTree = "<group>"; };
 		CBCBBDEC207026B7009B1CDF /* ServiceFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactories.swift; sourceTree = "<group>"; };
 		CBCBBDEE207284C0009B1CDF /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db.json; sourceTree = "<group>"; };
+		CBCBBDF420729A54009B1CDF /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		CBEA6E6A2067D3BF0028D6FB /* WindowFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowFeature.swift; sourceTree = "<group>"; };
-		CBEA6E6D2067D4180028D6FB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CBEA6E6D2067D4180028D6FB /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		CBEA6E712067D4D50028D6FB /* NavigationBarFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarFeature.swift; sourceTree = "<group>"; };
 		CBEA6E722067D4D50028D6FB /* TabBarFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarFeature.swift; sourceTree = "<group>"; };
 		CBEA6E752067D4F20028D6FB /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
@@ -310,7 +312,7 @@
 		CBEA6E6C2067D3E90028D6FB /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				CBEA6E6D2067D4180028D6FB /* ViewController.swift */,
+				CBEA6E6D2067D4180028D6FB /* RootViewController.swift */,
 				CBEA6E752067D4F20028D6FB /* ViewControllerPresenter.swift */,
 				CBEA6E762067D5490028D6FB /* ViewPresenter.swift */,
 			);
@@ -346,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				CBEA6E9220680BB80028D6FB /* PostsScreenFeature.swift */,
+				CBCBBDF420729A54009B1CDF /* PostsViewController.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -623,10 +626,11 @@
 				CBEA6E732067D4D50028D6FB /* NavigationBarFeature.swift in Sources */,
 				CBEA6E7F2067D6580028D6FB /* LoginScreenFeature.swift in Sources */,
 				CBEA6E772067D5490028D6FB /* ViewPresenter.swift in Sources */,
+				CBCBBDF520729A54009B1CDF /* PostsViewController.swift in Sources */,
 				CBEA6E832067D8540028D6FB /* ViewControllerPresenter.swift in Sources */,
 				CBCBBDE920701F9B009B1CDF /* PresentationLaunchers.swift in Sources */,
 				CBEA6E8E2067DF570028D6FB /* MainFlow.swift in Sources */,
-				CBEA6E6E2067D4180028D6FB /* ViewController.swift in Sources */,
+				CBEA6E6E2067D4180028D6FB /* RootViewController.swift in Sources */,
 				CBEA6E742067D4D50028D6FB /* TabBarFeature.swift in Sources */,
 				CBEA6E822067D66C0028D6FB /* LogoutButtonFeature.swift in Sources */,
 				CBB63559205EB6BF00340E97 /* BlogApp.swift in Sources */,
