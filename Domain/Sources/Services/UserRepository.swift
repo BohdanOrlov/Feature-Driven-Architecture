@@ -23,7 +23,12 @@ public final class UserRepository: UserProviding {
         self.networkService.send(request: .init(endpoint: "users"), completionHandler: { response in
             switch response {
             case .success(let data):
-                let users = try? JSONDecoder().decode([User].self, from: data)
+                var users: [User]?
+                do {
+                    users = try JSONDecoder().decode([User].self, from: data)
+                } catch {
+                    print(error)
+                }
                 let user = users?.first(where: { user in
                     return user.username == username
                 })
