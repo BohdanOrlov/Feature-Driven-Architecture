@@ -30,6 +30,7 @@
 		CBCBBDED207026B7009B1CDF /* ServiceFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDEC207026B7009B1CDF /* ServiceFactories.swift */; };
 		CBCBBDEF207284C0009B1CDF /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = CBCBBDEE207284C0009B1CDF /* db.json */; };
 		CBCBBDF520729A54009B1CDF /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDF420729A54009B1CDF /* PostsViewController.swift */; };
+		CBCBBDF72072A85F009B1CDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDF62072A85F009B1CDF /* LoginViewController.swift */; };
 		CBEA6E6B2067D3C00028D6FB /* WindowFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E6A2067D3BF0028D6FB /* WindowFeature.swift */; };
 		CBEA6E6E2067D4180028D6FB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E6D2067D4180028D6FB /* RootViewController.swift */; };
 		CBEA6E732067D4D50028D6FB /* NavigationBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E712067D4D50028D6FB /* NavigationBarFeature.swift */; };
@@ -133,6 +134,7 @@
 		CBCBBDEC207026B7009B1CDF /* ServiceFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactories.swift; sourceTree = "<group>"; };
 		CBCBBDEE207284C0009B1CDF /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db.json; sourceTree = "<group>"; };
 		CBCBBDF420729A54009B1CDF /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		CBCBBDF62072A85F009B1CDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CBEA6E6A2067D3BF0028D6FB /* WindowFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowFeature.swift; sourceTree = "<group>"; };
 		CBEA6E6D2067D4180028D6FB /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		CBEA6E712067D4D50028D6FB /* NavigationBarFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarFeature.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				CBEA6E7E2067D6580028D6FB /* LoginScreenFeature.swift */,
+				CBCBBDF62072A85F009B1CDF /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				CB6CCEFD205D8DD6006BD708 /* AppDelegate.swift in Sources */,
 				CBEA6E7C2067D62B0028D6FB /* RestartPushNotificationFeature.swift in Sources */,
 				CBEA6E7B2067D62B0028D6FB /* PushNotificationButtonFeature.swift in Sources */,
+				CBCBBDF72072A85F009B1CDF /* LoginViewController.swift in Sources */,
 				CBCBBDED207026B7009B1CDF /* ServiceFactories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
