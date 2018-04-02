@@ -7,19 +7,17 @@ import UIKit
 
 class TabBarFeature {
     @discardableResult
-    init(tabs: [String],
+    init<T: TabControllersInitializable>(tabs: [String],
          tabBarController: UITabBarController,
          viewControllerPresenting: ViewControllerPresenting,
-         didShowTabBar: @escaping ([String: UIViewController]) -> Void) {
-        var controllersByTabs = [String: UIViewController]()
+         didShowTabBar: @escaping (T) -> Void) {
         let rootViewControllers: [UIViewController] = tabs.map {
             let viewController = RootViewController()
             viewController.title = $0
-            controllersByTabs[$0] = viewController
             return viewController
         }
         tabBarController.viewControllers = rootViewControllers
-        didShowTabBar(controllersByTabs)
+        didShowTabBar(T.init(viewControllers: rootViewControllers))
         viewControllerPresenting.present(viewController: tabBarController, completion: {})
     }
 }

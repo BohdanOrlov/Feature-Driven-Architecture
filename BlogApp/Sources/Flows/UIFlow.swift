@@ -16,12 +16,12 @@ struct UIFlow {
     static func start(viewController: UIViewController, sessionService: SessionServiceProtocol, networkService: NetworkRequestSending) {
         showLoginScreen(viewController, sessionService) { [unowned viewController] session in
             showTabBar(viewController) { tabControllers in
-                showNavigationBar(tabControllers[Tab.posts.rawValue]!) { viewController in
+                showNavigationBar(tabControllers.posts) { viewController in
                     showPosts(viewController, session.userId, networkService) { buttonContainer in
                         showLogoutButton(buttonContainer, sessionService) { }
                     }
                 }
-                showNavigationBar(tabControllers[Tab.comments.rawValue]!) { viewController in
+                showNavigationBar(tabControllers.comments) { viewController in
                     showComments(viewController, session.userId, networkService)
                 }
             }

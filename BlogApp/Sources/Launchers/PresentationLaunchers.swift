@@ -9,13 +9,7 @@
 import Foundation
 import UIKit
 
-enum Tab: String {
-    case posts = "Posts"
-    case comments = "Comments"
-    static var all: [Tab] {
-        return [.posts, .comments]
-    }
-}
+
 
 extension WindowFrameFeature {
     static func launch(screenBounds: CGRect, didDefineScreenFrames: (CGRect) -> Void) {
@@ -29,13 +23,34 @@ extension WindowFeature {
     }
 }
 
+protocol TabControllersInitializable {
+    init(viewControllers: [UIViewController])
+}
+
+struct Tab: TabControllersInitializable {
+    init(viewControllers: [UIViewController]) {
+        posts = viewControllers[0]
+        comments = viewControllers[1]
+    }
+    
+    let posts: UIViewController
+    let comments: UIViewController
+    
+    static var all: [String] {
+        return ["Posts", "Comments"]
+    }
+}
+
 extension TabBarFeature {
-    static func launch(rootViewController: UIViewController, didShowTabBar: @escaping ([String: UIViewController]) -> Void) {
-        TabBarFeature(tabs: Tab.all.map { $0.rawValue },
+    
+    static func launch(rootViewController: UIViewController, didShowTabBar: @escaping (Tab) -> Void) {
+        TabBarFeature(tabs: Tab.all,
                       tabBarController: UITabBarController(),
                       viewControllerPresenting: ViewControllerPresenter(rootViewController: rootViewController),
                       didShowTabBar: didShowTabBar)
     }
+    
+    
 }
 
 extension NavigationBarFeature {
