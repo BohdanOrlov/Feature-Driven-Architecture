@@ -23,7 +23,10 @@ class LoginScreenFeature {
         self.sessionService = sessionService
         self.didLogin = didLogin
         self.loginViewController = loginViewController
-        
+        self.start()
+    }
+    
+    private func start() {
         self.loginViewController?.retain(self)
         self.loginViewController?.didTapButton = { [weak self] credentials in
             self?.sessionService.startSession(username: credentials.username, password: credentials.password)
@@ -34,7 +37,6 @@ class LoginScreenFeature {
     private func updateUIState(_ session:SessionState) {
         guard let loginViewController = self.loginViewController else { return }
         switch session {
-        
         case .readyToStart:
             self.viewControllerPresenter.present(viewController: loginViewController, completion: { })
             fallthrough

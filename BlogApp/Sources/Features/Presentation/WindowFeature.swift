@@ -16,7 +16,7 @@ class WindowFeature {
         let window = UIWindow(frame: windowFrame)
         let oldWindow = windowOwner.windows[windowKey]
         let rootViewController = RootViewController()
-        rootViewController.didLoad = {
+        rootViewController.didAppear = {
             if let oldWindow = oldWindow {
                 if let viewController = oldWindow.rootViewController {
                     viewController.dismiss(animated: false, completion: nil)

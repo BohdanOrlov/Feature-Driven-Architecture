@@ -9,12 +9,7 @@
 import UIKit
 
 class RootViewController: UIViewController {
-    var didLoad: (() -> Void)?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+    var didAppear: (() -> Void)?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,8 +17,8 @@ class RootViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.didLoad?()
-        self.didLoad = nil
+        self.didAppear?()
+        self.didAppear = nil
     }
     
     override func didReceiveMemoryWarning() {

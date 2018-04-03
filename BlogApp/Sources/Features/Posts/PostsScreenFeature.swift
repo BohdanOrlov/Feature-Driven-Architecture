@@ -10,6 +10,7 @@ import UI
 typealias PostsRenderingViewController = UIViewController & StringsRendering & SubviewContainerProviding
 
 class PostsScreenFeature {
+    
     @discardableResult
     init(postsViewController: PostsRenderingViewController,
          viewControllerPresenting: ViewControllerPresenting,
@@ -23,6 +24,5 @@ class PostsScreenFeature {
         }
 
         viewControllerPresenting.present(viewController: postsViewController, completion: { })
-        
     }
 }

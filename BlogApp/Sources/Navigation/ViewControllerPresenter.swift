@@ -16,7 +16,6 @@ protocol ViewControllerPresenting: class {
 
 class ViewControllerPresenter: ViewControllerPresenting {
     
-    
     private weak var rootViewController: UIViewController?
     
     init(rootViewController: UIViewController) {
@@ -24,7 +23,7 @@ class ViewControllerPresenter: ViewControllerPresenting {
     }
     
     func present(viewController: UIViewController, completion: @escaping () -> Void) {
-        if viewController.presentingViewController != nil || viewController.parent != nil {
+        if alreadyPresented(viewController) {
             self.rewind(to: viewController, completion: completion)
             return
         }
@@ -33,18 +32,7 @@ class ViewControllerPresenter: ViewControllerPresenting {
             completion()
             return
         }
-        if let navigationController = rootViewController as? UINavigationController {
-            navigationController.pushViewController(viewController, animated: navigationController.viewControllers.count > 0)
-            completion()
-            return
-        }
-        let viewControllerForModalPresentation = rootViewController.viewControllerForModalPresentation!
-        if (viewControllerForModalPresentation.isEmpty) {
-            viewControllerForModalPresentation.add(viewController)
-            completion()
-        } else {
-            viewControllerForModalPresentation.present(viewController, animated: true, completion: completion)
-        }
+        present(rootViewController: rootViewController, viewController: viewController, completion)
     }
     
     func dismiss(viewController: UIViewController, completion: @escaping () -> Void) {
@@ -55,11 +43,38 @@ class ViewControllerPresenter: ViewControllerPresenting {
         }
     }
     
+    private func alreadyPresented(_ viewController: UIViewController) -> Bool {
+        return viewController.presentingViewController != nil || viewController.parent != nil
+    }
+    
     private func rewind(to viewController: UIViewController, completion: @escaping () -> Void) {
         if viewController.presentedViewController != nil {
             viewController.dismiss(animated: true, completion: completion)
         } else {
             completion()
+        }
+    }
+    
+    private func present(rootViewController: UIViewController,
+                         viewController: UIViewController,
+                         _ completion: @escaping () -> Void) {
+        if let navigationController = rootViewController as? UINavigationController {
+            navigationController.pushViewController(viewController, animated: navigationController.viewControllers.count > 0)
+            completion()
+            return
+        }
+        presentAsFullscreen(rootViewController: rootViewController, viewController: viewController, completion)
+    }
+    
+    private func presentAsFullscreen(rootViewController: UIViewController,
+                                    viewController: UIViewController,
+                                    _ completion: @escaping () -> Void) {
+        let viewControllerForModalPresentation = rootViewController.viewControllerForModalPresentation!
+        if (viewControllerForModalPresentation.isEmpty) {
+            viewControllerForModalPresentation.add(viewController)
+            completion()
+        } else {
+            viewControllerForModalPresentation.present(viewController, animated: true, completion: completion)
         }
     }
 }

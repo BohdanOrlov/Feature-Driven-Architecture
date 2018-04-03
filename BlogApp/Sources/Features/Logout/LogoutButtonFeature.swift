@@ -11,21 +11,24 @@ class LogoutButtonFeature {
     private let viewPresenter: ViewPresenting
     private let sessionService: SessionServiceProtocol
     private let didLogout: () -> Void
+    private weak var button: UIButton?
     
     @discardableResult
     init(viewPresenter: ViewPresenter, sessionService: SessionServiceProtocol, didLogout: @escaping () -> Void) {
         self.viewPresenter = viewPresenter
         self.sessionService = sessionService
         self.didLogout = didLogout
+        self.start()
+    }
+    
+    private func start() {
         let button = self.makeButton()
         self.button = button
         self.button?.retain(self)
         self.observer = self.sessionService.observableSessionState.observeAndCall(weakify(self, type(of: self).updateUIState))
-    }
+    }    
     
-    private weak var button: UIButton?
-    
-    func makeButton() -> UIButton {
+    private func makeButton() -> UIButton {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints  = false
         button.heightAnchor.constraint(equalToConstant: 45).isActive = true
