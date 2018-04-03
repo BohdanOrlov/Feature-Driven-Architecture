@@ -32,7 +32,7 @@ struct UIFlow {
     static var showPosts = PostsScreenFeature.launch
     static var showComments = CommentsScreenFeature.launch
     static var showLogoutButton = LogoutButtonFeature.launch
-    static var showTabBar = TabBarFeature.launch
+    static var showTabBar = TabBarFeature.launchMain
     static var showNavigationBar = NavigationBarFeature.launch
 }
 

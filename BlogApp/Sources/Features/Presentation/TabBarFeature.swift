@@ -7,11 +7,11 @@ import UIKit
 
 class TabBarFeature {
     @discardableResult
-    init<T: TabControllersInitializable>(tabs: [String],
+    init<T: TabControllersContainer>(tabs: T.Type,
          tabBarController: UITabBarController,
          viewControllerPresenting: ViewControllerPresenting,
          didShowTabBar: @escaping (T) -> Void) {
-        let rootViewControllers: [UIViewController] = tabs.map {
+        let rootViewControllers: [UIViewController] = tabs.titles.map {
             let viewController = RootViewController()
             viewController.title = $0
             return viewController

@@ -23,11 +23,12 @@ extension WindowFeature {
     }
 }
 
-protocol TabControllersInitializable {
+protocol TabControllersContainer {
+    static var titles: [String] { get }
     init(viewControllers: [UIViewController])
 }
 
-struct Tab: TabControllersInitializable {
+struct MainTabs: TabControllersContainer {
     init(viewControllers: [UIViewController]) {
         posts = viewControllers[0]
         comments = viewControllers[1]
@@ -36,18 +37,22 @@ struct Tab: TabControllersInitializable {
     let posts: UIViewController
     let comments: UIViewController
     
-    static var all: [String] {
+    static var titles: [String] {
         return ["Posts", "Comments"]
     }
 }
 
 extension TabBarFeature {
     
-    static func launch(rootViewController: UIViewController, didShowTabBar: @escaping (Tab) -> Void) {
-        TabBarFeature(tabs: Tab.all,
+    static func launch<T: TabControllersContainer>(tabs: T.Type, rootViewController: UIViewController, didShowTabBar: @escaping (T) -> Void) {
+        TabBarFeature(tabs: tabs,
                       tabBarController: UITabBarController(),
                       viewControllerPresenting: ViewControllerPresenter(rootViewController: rootViewController),
                       didShowTabBar: didShowTabBar)
+    }
+    
+    static func launchMain(rootViewController: UIViewController, didShowTabBar: @escaping (MainTabs) -> Void) {
+        self.launch(tabs: MainTabs.self, rootViewController: rootViewController, didShowTabBar: didShowTabBar)
     }
     
     
