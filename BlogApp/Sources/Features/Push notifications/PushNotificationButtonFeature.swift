@@ -16,7 +16,7 @@ class PushNotificationButtonFeature {
             return
         }
         let button = UIButton(type: .system)
-        button.setTitle("Simulate Push", for: .normal)
+        button.setTitle("Fake Restart Push", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         window.addSubview(button)
         button.leftAnchor.constraint(equalTo: window.leftAnchor, constant: 20).isActive = true

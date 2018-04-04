@@ -17,7 +17,7 @@ public enum SessionState {
     case failed(Error)
 }
 
-public protocol SessionServiceProtocol {
+public protocol SessionServiceProtocol: class {
     var observableSessionState: ReadonlyObservable<SessionState> { get }
     func startSession(username: String, password: String)
     func stopSession()
@@ -28,9 +28,17 @@ public class SessionService: SessionServiceProtocol {
     private let mutableObservableSessionState = MutableObservable<SessionState>(.readyToStart)
     
     private let userProvider: UserProviding
+    private let userDefaults: UserDefaults
+    private let persistenceKey: String
     
-    public init(userProvider: UserProviding) {
+    static var persistenceSalt = 0 // in the split screen mode we have to keep persistant storages separate for separate session services
+    
+    public init(userProvider: UserProviding, userDefaults: UserDefaults) {
         self.userProvider = userProvider
+        self.userDefaults = userDefaults
+        self.persistenceKey = "blog.app.session.\(SessionService.persistenceSalt)"
+        self.attemptToRestoreSession()
+        SessionService.persistenceSalt += 1
     }
     
     public func startSession(username: String, password: String) {
@@ -40,12 +48,7 @@ public class SessionService: SessionServiceProtocol {
         }
         self.mutableObservableSessionState.value = .starting
         self.userProvider.user(username: username) { [weak self] user in
-            if let user = user {
-                self?.mutableObservableSessionState.value = .started(Session(userId: user.id, username: user.username))
-            } else {
-                self?.mutableObservableSessionState.value = .failed(NSError(domain: "", code: 0, userInfo: nil))
-                self?.mutableObservableSessionState.value = .readyToStart
-            }
+            self?.handle(user)
         }
     }
     
@@ -54,7 +57,28 @@ public class SessionService: SessionServiceProtocol {
             assertionFailure()
             return
         }
+        self.userDefaults.removeObject(forKey: self.persistenceKey)
         self.mutableObservableSessionState.value = .stopped
         self.mutableObservableSessionState.value = .readyToStart
+    }
+    
+    private func handle(_ user: User?) {
+        if let user = user {
+            let session = Session(userId: user.id, username: user.username)
+            self.mutableObservableSessionState.value = .started(session)
+            self.userDefaults.set(try? PropertyListEncoder().encode(session), forKey: self.persistenceKey)
+        } else {
+            self.mutableObservableSessionState.value = .failed(NSError(domain: "", code: 0, userInfo: nil))
+            self.mutableObservableSessionState.value = .readyToStart
+        }
+    }
+    
+    private func attemptToRestoreSession() {
+        guard let encodedSession = userDefaults.object(forKey: self.persistenceKey) as? Data else { return }
+        guard let session = try? PropertyListDecoder().decode(Session.self, from: encodedSession) else {
+            assertionFailure()
+            return
+        }
+        self.mutableObservableSessionState.value = .started(session)
     }
 }

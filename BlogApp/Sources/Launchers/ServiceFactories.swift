@@ -20,7 +20,8 @@ extension NetworkService {
 
 extension SessionService {
     static func shared(networkService: NetworkRequestSending, didSetup: (SessionServiceProtocol) -> Void) {
-        didSetup(SessionService(userProvider: UserRepository(networkService: networkService)))
+        let userRepository = UserRepository(networkService: networkService)
+        didSetup(SessionService(userProvider: userRepository, userDefaults: .standard))
     }
 }
 

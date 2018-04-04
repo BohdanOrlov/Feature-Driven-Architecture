@@ -17,9 +17,11 @@ protocol ViewControllerPresenting: class {
 class ViewControllerPresenter: ViewControllerPresenting {
     
     private weak var rootViewController: UIViewController?
+    private let application: UIApplication
     
-    init(rootViewController: UIViewController) {
+    init(rootViewController: UIViewController, application: UIApplication) {
         self.rootViewController = rootViewController
+        self.application = application
     }
     
     func present(viewController: UIViewController, completion: @escaping () -> Void) {
@@ -74,11 +76,11 @@ class ViewControllerPresenter: ViewControllerPresenting {
             viewControllerForModalPresentation.add(viewController)
             completion()
         } else {
-            viewControllerForModalPresentation.present(viewController, animated: true, completion: completion)
+            let appIsActive = (application.applicationState == .active)
+            viewControllerForModalPresentation.present(viewController, animated: appIsActive, completion: completion)
         }
     }
 }
-
 
 extension UIViewController {
     var isEmpty: Bool {

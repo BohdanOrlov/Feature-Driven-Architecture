@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Core
 import Domain
 import UI
 
@@ -18,10 +19,17 @@ struct MainFlow {
             setupServices { networkService, sessionService, pushNotificationService in
                 startUIFlow(viewController, sessionService, networkService)
                 startPushNotificationHandlingFlow(viewController, pushNotificationService) {
-                    start(windowOwner: windowOwner)
+                    restart(windowOwner: windowOwner)
                 }
             }
         }
+    }
+        
+    private static func restart(windowOwner: UIWindowOwner) {
+        UserDefaults.standard.reset()
+        start(windowOwner: windowOwner)
+        
+        preventsWeirdCrash()
     }
     
     private static func setupServices(didSetup: (NetworkRequestSending, SessionServiceProtocol, PushNotificationServiceProtocol) -> Void) {

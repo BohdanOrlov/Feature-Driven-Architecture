@@ -47,7 +47,7 @@ extension TabBarFeature {
     static func launch<T: TabControllersContainer>(tabs: T.Type, rootViewController: UIViewController, didShowTabBar: @escaping (T) -> Void) {
         TabBarFeature(tabs: tabs,
                       tabBarController: UITabBarController(),
-                      viewControllerPresenting: ViewControllerPresenter(rootViewController: rootViewController),
+                      viewControllerPresenting: ViewControllerPresenter(rootViewController: rootViewController, application: .shared),
                       didShowTabBar: didShowTabBar)
     }
     
@@ -60,7 +60,7 @@ extension TabBarFeature {
 
 extension NavigationBarFeature {
     static func launch(rootViewController: UIViewController,  didShowNavigationBar: @escaping (UIViewController) -> Void) {
-        NavigationBarFeature(viewControllerPresenter: ViewControllerPresenter(rootViewController: rootViewController),
+        NavigationBarFeature(viewControllerPresenter: ViewControllerPresenter(rootViewController: rootViewController, application: .shared),
                              navigationController: UINavigationController(),
                              didShowNavigationBar: didShowNavigationBar)
     }

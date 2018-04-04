@@ -51,6 +51,7 @@ class LoginViewController: ViewController, LoginRendering {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.backgroundColor = .white
         self.view.addSubview(self.activityIndicator)
         self.button.rightAnchor.constraint(equalTo: self.activityIndicator.leftAnchor, constant: 40).isActive = true

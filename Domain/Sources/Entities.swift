@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct Session {
+public struct Session: Codable {
     public let userId: Int
     public let username: String
     public init(userId: Int, username: String) {

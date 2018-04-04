@@ -18,6 +18,7 @@ class PostsScreenFeature {
          postsRepository: PostsProviding,
          didPrepareButtonContainer: @escaping (UIView) -> Void) {
         
+        postsViewController.title = "User ID: \(userId)"
         postsViewController.didPrepareSubviewsContainer = didPrepareButtonContainer
         postsRepository.posts(userId: userId) { [weak postsViewController] posts in
             postsViewController?.data = .init(strings: posts.map { $0.body })

@@ -16,7 +16,7 @@ extension LoginScreenFeature {
                                 sessionService: SessionServiceProtocol,
                                 didLogin: @escaping (Session) -> Void) {
         LoginScreenFeature(loginViewController: LoginViewController(),
-                           viewControllerPresenter: ViewControllerPresenter(rootViewController: rootViewController),
+                           viewControllerPresenter: ViewControllerPresenter(rootViewController: rootViewController, application: .shared),
                            sessionService: sessionService,
                            didLogin: didLogin)
     }
@@ -25,7 +25,7 @@ extension LoginScreenFeature {
 extension PostsScreenFeature {
     static func launch(viewController: UIViewController, userId: Int, networkService: NetworkRequestSending, didPrepareButtonContainer: @escaping (UIView) -> Void) {
         PostsScreenFeature(postsViewController: PostsViewController(),
-                           viewControllerPresenting: ViewControllerPresenter(rootViewController: viewController),
+                           viewControllerPresenting: ViewControllerPresenter(rootViewController: viewController, application: .shared),
                            userId: userId,
                            postsRepository: PostsRepository(networkService: networkService),
                            didPrepareButtonContainer: didPrepareButtonContainer)
@@ -39,7 +39,7 @@ extension CommentsScreenFeature {
         let userCommentsRepository = UserCommentsRepository(postsRepository: postsRepository,
                                                             commentsRepository: commentsRepository)
         CommentsScreenFeature(commentsViewController: StringsTableViewController(),
-                              viewControllerPresenting: ViewControllerPresenter(rootViewController: viewController),
+                              viewControllerPresenting: ViewControllerPresenter(rootViewController: viewController, application: .shared),
                               userId: userId,
                               commentsRepository: userCommentsRepository)
     }

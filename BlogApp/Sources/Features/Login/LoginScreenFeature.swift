@@ -38,7 +38,7 @@ class LoginScreenFeature {
         guard let loginViewController = self.loginViewController else { return }
         switch session {
         case .readyToStart:
-            self.viewControllerPresenter.present(viewController: loginViewController, completion: { })
+            self.presentLoginScreenIfNeeded()
             fallthrough
         case .failed(_): fallthrough
         case .stopped:
@@ -48,8 +48,14 @@ class LoginScreenFeature {
             loginViewController.isUserInteractionEnabled = false
             loginViewController.showsActivityIndicator = true
         case .started(let session):
+            self.presentLoginScreenIfNeeded()
             self.didLogin(session)
             loginViewController.showsActivityIndicator = false
         }
+    }
+    
+    private func presentLoginScreenIfNeeded() {
+        guard let loginViewController = self.loginViewController, loginViewController.presentingViewController == nil else { return }
+        self.viewControllerPresenter.present(viewController: loginViewController, completion: { })
     }
 }
