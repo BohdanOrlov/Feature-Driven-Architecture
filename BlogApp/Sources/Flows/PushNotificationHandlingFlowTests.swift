@@ -14,8 +14,6 @@ import Domain
 import DomainTestsSupport
 import UI
 import UITestsSupport
-@testable import BlogApp
-import BlogAppTestsSupport
 
 class PushNotificationHandlingFlowTests: XCTestCase {
     
