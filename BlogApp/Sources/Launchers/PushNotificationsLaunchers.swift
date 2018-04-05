@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Domain
+import Features
 
 extension RestartPushNotificationFeature {
     static func launch(pushNotificationService: PushNotificationServiceProtocol,

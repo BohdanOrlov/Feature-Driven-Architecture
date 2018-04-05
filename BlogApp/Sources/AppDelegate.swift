@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowOwner {

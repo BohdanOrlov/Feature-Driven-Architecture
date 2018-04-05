@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import UI
 import Domain
+import Features
 
 extension LogoutButtonFeature {
     static func launch(buttonContainer: UIView, sessionService: SessionServiceProtocol, didLogout: @escaping () -> Void) {

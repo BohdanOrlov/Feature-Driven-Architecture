@@ -18,3 +18,25 @@ public class FakeDomain { // This is a framework for Domain's mocks and fakes an
         _ = Domain()
     }
 }
+
+public final class FakeSessionService: SessionServiceProtocol {
+    
+    public init() { }
+    
+    public var observableSessionState: ReadonlyObservable<SessionState> {
+        return stubbedSessionState.makeReadonly()
+    }
+    
+    public var startSessionCalled = false
+    public var stopSessionCalled = false
+    
+    public var stubbedSessionState = MutableObservable<SessionState>(.readyToStart)
+    
+    public func startSession(username: String, password: String) {
+        startSessionCalled = true
+    }
+    
+    public func stopSession() {
+        stopSessionCalled = true
+    }
+}

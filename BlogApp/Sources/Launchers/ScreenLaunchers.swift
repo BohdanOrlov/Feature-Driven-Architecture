@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Domain
 import UI
+import Features
 
 extension LoginScreenFeature {
     static func launch(rootViewController: UIViewController,

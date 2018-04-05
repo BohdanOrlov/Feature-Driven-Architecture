@@ -10,7 +10,7 @@ import Foundation
 
 public typealias ComputedPropertyChanges = Void
 
-public protocol ObserverProtocol: class {
+public protocol ObserverProtocol: AnyObject {
     
 }
 

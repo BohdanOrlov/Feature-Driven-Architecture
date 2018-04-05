@@ -13,6 +13,10 @@
 		CB49341F2067CFB4004C49EA /* libCoreTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4934202067CFB4004C49EA /* libCoreTestsSupport.a */; };
 		CB6CCF5C205D9A9F006BD708 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CCF5B205D9A9F006BD708 /* UI.swift */; };
 		CB6CCF68205D9BC9006BD708 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CCF67205D9BC9006BD708 /* UITests.swift */; };
+		CB872E862076CADC009BB548 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB872E812076CA31009BB548 /* RootViewController.swift */; };
+		CB872E872076CADC009BB548 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB872E822076CA31009BB548 /* ViewControllerPresenter.swift */; };
+		CB872E882076CADC009BB548 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB872E832076CA31009BB548 /* ViewPresenter.swift */; };
+		CB872EA82076D4B3009BB548 /* UIWindowOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB872EA72076D4B3009BB548 /* UIWindowOwner.swift */; };
 		CBB63536205EAB6E00340E97 /* UITestsSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB63535205EAB6E00340E97 /* UITestsSupport.swift */; };
 		CBB63537205EAB9F00340E97 /* libUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6CCF4F205D9A7F006BD708 /* libUI.a */; };
 		CBB63538205EABA700340E97 /* libUITestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB6352C205EAB5700340E97 /* libUITestsSupport.a */; };
@@ -61,6 +65,10 @@
 		CB6CCF65205D9BC9006BD708 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6CCF67205D9BC9006BD708 /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		CB6CCF69205D9BC9006BD708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB872E812076CA31009BB548 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		CB872E822076CA31009BB548 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
+		CB872E832076CA31009BB548 /* ViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
+		CB872EA72076D4B3009BB548 /* UIWindowOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowOwner.swift; sourceTree = "<group>"; };
 		CBB6352C205EAB5700340E97 /* libUITestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUITestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB63535205EAB6E00340E97 /* UITestsSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestsSupport.swift; sourceTree = "<group>"; };
 		CBB63542205EB47200340E97 /* libPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,10 +163,12 @@
 		CB6CCF51205D9A7F006BD708 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CB872E842076CA31009BB548 /* Navigation */,
+				CB872E852076CA38009BB548 /* Components */,
 				CB6CCF5B205D9A9F006BD708 /* UI.swift */,
-				CBC51BCC20698B470030C99C /* StringsTableViewController.swift */,
 				CBEA6EA320682E0E0028D6FB /* UIControl+ClosureCallback.swift */,
 				CBCBBDF020728731009B1CDF /* UIResponder+Retain.swift */,
+				CB872EA72076D4B3009BB548 /* UIWindowOwner.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -170,6 +180,24 @@
 				CB6CCF69205D9BC9006BD708 /* Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		CB872E842076CA31009BB548 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CB872E812076CA31009BB548 /* RootViewController.swift */,
+				CB872E822076CA31009BB548 /* ViewControllerPresenter.swift */,
+				CB872E832076CA31009BB548 /* ViewPresenter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CB872E852076CA38009BB548 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CBC51BCC20698B470030C99C /* StringsTableViewController.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		CBB6352D205EAB5700340E97 /* TestsSupport */ = {
@@ -421,10 +449,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB872E862076CADC009BB548 /* RootViewController.swift in Sources */,
 				CBEA6EA420682E0E0028D6FB /* UIControl+ClosureCallback.swift in Sources */,
+				CB872E882076CADC009BB548 /* ViewPresenter.swift in Sources */,
 				CBC51BCD20698B470030C99C /* StringsTableViewController.swift in Sources */,
+				CB872E872076CADC009BB548 /* ViewControllerPresenter.swift in Sources */,
 				CB6CCF5C205D9A9F006BD708 /* UI.swift in Sources */,
 				CBCBBDF120728731009B1CDF /* UIResponder+Retain.swift in Sources */,
+				CB872EA82076D4B3009BB548 /* UIWindowOwner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

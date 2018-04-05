@@ -5,6 +5,9 @@
       location = "group:BlogApp/BlogApp.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Features/Features.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:UI/UI.xcodeproj">
    </FileRef>
    <FileRef

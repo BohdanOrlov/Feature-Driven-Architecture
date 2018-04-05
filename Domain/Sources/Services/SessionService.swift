@@ -17,7 +17,7 @@ public enum SessionState {
     case failed(Error)
 }
 
-public protocol SessionServiceProtocol: class {
+public protocol SessionServiceProtocol: AnyObject {
     var observableSessionState: ReadonlyObservable<SessionState> { get }
     func startSession(username: String, password: String)
     func stopSession()

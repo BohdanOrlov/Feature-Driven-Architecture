@@ -7,14 +7,21 @@ target 'BlogApp' do
 
   pod 'Layoutless'
 
-  target 'BlogAppTestsSupport' do
-    inherit! :search_paths
-  end
-
   target 'BlogAppTests' do
     inherit! :search_paths
     pod 'Layoutless'
   end
+end
+
+target 'Features' do
+    use_frameworks!
+    project 'Features/Features.xcodeproj'
+    pod 'Layoutless'
+    
+    target 'FeaturesTests' do
+        inherit! :search_paths
+        pod 'Layoutless'
+    end
 end
 
 target 'UI' do

@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
-
-
+import Core
+import Domain
+import UI
+import Features
 
 extension WindowFrameFeature {
     static func launch(screenBounds: CGRect, didDefineScreenFrames: (CGRect) -> Void) {
@@ -21,11 +23,6 @@ extension WindowFeature {
     static func launch(windowFrame: CGRect, windowOwner: UIWindowOwner, didSetupWindow: @escaping (UIViewController) -> Void) {
         WindowFeature(windowFrame: windowFrame, windowOwner: windowOwner, didSetupWindow: didSetupWindow)
     }
-}
-
-protocol TabControllersContainer {
-    static var titles: [String] { get }
-    init(viewControllers: [UIViewController])
 }
 
 struct MainTabs: TabControllersContainer {

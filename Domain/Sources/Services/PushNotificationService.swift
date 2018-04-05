@@ -9,7 +9,7 @@
 import Foundation
 import Core
 
-public protocol PushNotificationServiceProtocol: class {
+public protocol PushNotificationServiceProtocol: AnyObject {
     var didReceivePush: ((PushNotification) -> Void)? { get set }
     func push(notification: PushNotification)
 }
