@@ -13,6 +13,7 @@ target 'BlogApp' do
 
   target 'BlogAppTests' do
     inherit! :search_paths
+    pod 'Layoutless'
   end
 end
 

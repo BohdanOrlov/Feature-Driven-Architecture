@@ -26,6 +26,6 @@ public protocol NetworkServiceTask {
 }
 
 public protocol NetworkRequestSending {
-    @discardableResult func send(request: Request,  completionHandler: @escaping (Response) -> Void) -> NetworkServiceTask
+    @discardableResult func send(request: Request,  completionHandler: @escaping (Response) -> Void) -> URLSessionDataTask
 }
 

@@ -18,7 +18,7 @@ public final class NetworkService: NetworkRequestSending {
         self.session = session
     }
     
-    public func send(request: Request, completionHandler: @escaping (Response) -> Void) -> NetworkServiceTask {
+    public func send(request: Request, completionHandler: @escaping (Response) -> Void) -> URLSessionDataTask {
         let dataTask = self.session.dataTask(with: self.url(for: request)) {
             data, response, error in
             DispatchQueue.main.async {
@@ -52,8 +52,3 @@ extension URLSession: URLSessionProtocol {
     
 }
 
-extension URLSessionDataTask: NetworkServiceTask {
-    public var url: URL {
-        return self.currentRequest!.url! // If url/request nil than its unrecoverable programmer's error
-    }
-}
