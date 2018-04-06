@@ -11,9 +11,9 @@ import Domain
 
 extension NetworkService {
     static func shared(didSetup: (NetworkRequestSending) -> Void) {
-//        let urlString = "https://jsonplaceholder.typicode.com"  // this might not work since that data is publicly mutable
+        let urlString = "https://jsonplaceholder.typicode.com"  // this might not work since that data is publicly mutable
         // To start local server: https://github.com/typicode/json-server
-        let urlString = "http://localhost:3000"  // json-server --watch db.json
+//        let urlString = "http://localhost:3000"  // json-server --watch db.json
         didSetup(NetworkService(hostURL: URL(string: urlString)!, session: URLSession(configuration: .default)))
     }
 }

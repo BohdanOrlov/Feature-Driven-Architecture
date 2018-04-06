@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB03CA4C205DC0EB00DE0B91 /* Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB03CA4B205DC0EB00DE0B91 /* Domain.swift */; };
-		CB03CA56205DC1CB00DE0B91 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB03CA55205DC1CB00DE0B91 /* DomainTests.swift */; };
 		CB03CA69205DC27C00DE0B91 /* libDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB03CA3F205DC0D900DE0B91 /* libDomain.a */; };
-		CB03CA6B205DC29E00DE0B91 /* FakeDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB03CA6A205DC29E00DE0B91 /* FakeDomain.swift */; };
 		CB03CA6C205DC2DC00DE0B91 /* libDomainTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB03CA60205DC26F00DE0B91 /* libDomainTestsSupport.a */; };
 		CB4934212067D065004C49EA /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4934222067D065004C49EA /* libCore.a */; };
 		CB4934232067D06B004C49EA /* libCoreTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4934242067D06B004C49EA /* libCoreTestsSupport.a */; };
+		CB872EBE20782807009BB548 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB872EBD20782807009BB548 /* PushNotification.swift */; };
+		CB872EC12078298C009BB548 /* FakeDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB872EC02078298B009BB548 /* FakeDomain.swift */; };
 		CBC51BD120698E4E0030C99C /* CommentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BD020698E4E0030C99C /* CommentsRepository.swift */; };
 		CBC51BD320698F3C0030C99C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BD220698F3C0030C99C /* Comment.swift */; };
 		CBC51BD5206990460030C99C /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BD4206990460030C99C /* PostsRepository.swift */; };
@@ -21,7 +20,7 @@
 		CBC51BD9206994640030C99C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC51BD8206994640030C99C /* Post.swift */; };
 		CBCBBDD020700A5B009B1CDF /* FakePushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDCF20700A5B009B1CDF /* FakePushNotificationService.swift */; };
 		CBEA6E862067D9A70028D6FB /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E842067D9A60028D6FB /* PushNotificationService.swift */; };
-		CBEA6E872067D9A70028D6FB /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E852067D9A60028D6FB /* Entities.swift */; };
+		CBEA6E872067D9A70028D6FB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E852067D9A60028D6FB /* Session.swift */; };
 		CBEA6E97206822180028D6FB /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E96206822180028D6FB /* UserRepository.swift */; };
 		CBEA6E9A2068228E0028D6FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E992068228E0028D6FB /* User.swift */; };
 		CBEA6E9D206823870028D6FB /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E9C206823870028D6FB /* NetworkServiceProtocol.swift */; };
@@ -54,14 +53,13 @@
 		68F54710AF33A7C408AAF744 /* libPods-Domain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Domain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A576E8EB9271409377C96214 /* libPods-DomainTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DomainTestsSupport.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB03CA3F205DC0D900DE0B91 /* libDomain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDomain.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB03CA4B205DC0EB00DE0B91 /* Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain.swift; sourceTree = "<group>"; };
 		CB03CA53205DC1CB00DE0B91 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB03CA55205DC1CB00DE0B91 /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
-		CB03CA57205DC1CB00DE0B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB03CA57205DC1CB00DE0B91 /* TestsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TestsInfo.plist; sourceTree = "<group>"; };
 		CB03CA60205DC26F00DE0B91 /* libDomainTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDomainTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB03CA6A205DC29E00DE0B91 /* FakeDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDomain.swift; sourceTree = "<group>"; };
 		CB4934222067D065004C49EA /* libCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4934242067D06B004C49EA /* libCoreTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCoreTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB872EBD20782807009BB548 /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
+		CB872EC02078298B009BB548 /* FakeDomain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeDomain.swift; sourceTree = "<group>"; };
 		CBB6353A205EAE7700340E97 /* libPlatformTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatformTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB6353C205EAE9D00340E97 /* libPlatform.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatform.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB6353E205EAF8A00340E97 /* libPods-PlatformTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-PlatformTestsSupport.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +71,7 @@
 		CBC51BD8206994640030C99C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CBCBBDCF20700A5B009B1CDF /* FakePushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakePushNotificationService.swift; sourceTree = "<group>"; };
 		CBEA6E842067D9A60028D6FB /* PushNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
-		CBEA6E852067D9A60028D6FB /* Entities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		CBEA6E852067D9A60028D6FB /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		CBEA6E96206822180028D6FB /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		CBEA6E992068228E0028D6FB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CBEA6E9C206823870028D6FB /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
@@ -136,8 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				CB03CA41205DC0D900DE0B91 /* Sources */,
-				CB03CA61205DC26F00DE0B91 /* TestsSupport */,
-				CB03CA54205DC1CB00DE0B91 /* Tests */,
+				CB03CA54205DC1CB00DE0B91 /* Resources */,
 				CB03CA40205DC0D900DE0B91 /* Products */,
 				B580BE2E1FB4985495A8EE20 /* Pods */,
 				9A91A2489CE9874E82769B55 /* Frameworks */,
@@ -159,28 +156,29 @@
 			children = (
 				CBEA6E9B2068234E0028D6FB /* Protocols */,
 				CBEA6E98206822810028D6FB /* Entities */,
+				CB872EBF2078282A009BB548 /* Repositories */,
 				CBEA6E95206821E60028D6FB /* Services */,
-				CB03CA4B205DC0EB00DE0B91 /* Domain.swift */,
-				CBEA6E852067D9A60028D6FB /* Entities.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		CB03CA54205DC1CB00DE0B91 /* Tests */ = {
+		CB03CA54205DC1CB00DE0B91 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CB03CA55205DC1CB00DE0B91 /* DomainTests.swift */,
-				CB03CA57205DC1CB00DE0B91 /* Info.plist */,
+				CB03CA57205DC1CB00DE0B91 /* TestsInfo.plist */,
 			);
-			path = Tests;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		CB03CA61205DC26F00DE0B91 /* TestsSupport */ = {
+		CB872EBF2078282A009BB548 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				CB03CA6A205DC29E00DE0B91 /* FakeDomain.swift */,
+				CBEA6E96206822180028D6FB /* UserRepository.swift */,
+				CBC51BD020698E4E0030C99C /* CommentsRepository.swift */,
+				CBC51BD4206990460030C99C /* PostsRepository.swift */,
+				CBC51BD6206990910030C99C /* UserCommentsRepository.swift */,
 			);
-			path = TestsSupport;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		CBEA6E95206821E60028D6FB /* Services */ = {
@@ -188,11 +186,8 @@
 			children = (
 				CBEA6E842067D9A60028D6FB /* PushNotificationService.swift */,
 				CBCBBDCF20700A5B009B1CDF /* FakePushNotificationService.swift */,
-				CBEA6E96206822180028D6FB /* UserRepository.swift */,
-				CBC51BD020698E4E0030C99C /* CommentsRepository.swift */,
-				CBC51BD4206990460030C99C /* PostsRepository.swift */,
-				CBC51BD6206990910030C99C /* UserCommentsRepository.swift */,
 				CBEA6EA1206827800028D6FB /* SessionService.swift */,
+				CB872EC02078298B009BB548 /* FakeDomain.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,6 +198,8 @@
 				CBEA6E992068228E0028D6FB /* User.swift */,
 				CBC51BD8206994640030C99C /* Post.swift */,
 				CBC51BD220698F3C0030C99C /* Comment.swift */,
+				CBEA6E852067D9A60028D6FB /* Session.swift */,
+				CB872EBD20782807009BB548 /* PushNotification.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -329,11 +326,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBEA6E872067D9A70028D6FB /* Entities.swift in Sources */,
+				CB872EBE20782807009BB548 /* PushNotification.swift in Sources */,
+				CBEA6E872067D9A70028D6FB /* Session.swift in Sources */,
 				CBC51BD120698E4E0030C99C /* CommentsRepository.swift in Sources */,
 				CBC51BD7206990910030C99C /* UserCommentsRepository.swift in Sources */,
 				CBC51BD9206994640030C99C /* Post.swift in Sources */,
-				CB03CA4C205DC0EB00DE0B91 /* Domain.swift in Sources */,
 				CBEA6EA2206827800028D6FB /* SessionService.swift in Sources */,
 				CBEA6E9D206823870028D6FB /* NetworkServiceProtocol.swift in Sources */,
 				CBC51BD5206990460030C99C /* PostsRepository.swift in Sources */,
@@ -348,7 +345,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB03CA56205DC1CB00DE0B91 /* DomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB03CA6B205DC29E00DE0B91 /* FakeDomain.swift in Sources */,
+				CB872EC12078298C009BB548 /* FakeDomain.swift in Sources */,
 				CBCBBDD020700A5B009B1CDF /* FakePushNotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,7 +497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/TestsInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = borlov.DomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,7 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/TestsInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = borlov.DomainTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

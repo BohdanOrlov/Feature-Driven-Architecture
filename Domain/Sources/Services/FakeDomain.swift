@@ -11,14 +11,6 @@ import Core
 import CoreTestsSupport
 import Domain
 
-public class FakeDomain { // This is a framework for Domain's mocks and fakes and other tests syntax sugar
-    public init() {
-        _ = Core()
-        _ = FakeCore()
-        _ = Domain()
-    }
-}
-
 public final class FakeSessionService: SessionServiceProtocol {
     
     public init() { }

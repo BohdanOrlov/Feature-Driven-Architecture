@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Layoutless
 
 public protocol StringsRendering {
     var data: StringsData { get set }

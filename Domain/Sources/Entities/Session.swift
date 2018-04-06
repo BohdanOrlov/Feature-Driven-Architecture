@@ -17,7 +17,3 @@ public struct Session: Codable {
         self.username = username
     }
 }
-
-public enum PushNotification {
-    case restart
-}

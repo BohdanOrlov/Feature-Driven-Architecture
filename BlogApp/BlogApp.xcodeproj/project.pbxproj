@@ -10,8 +10,6 @@
 		25E5F42C93ED9DC9854B5938 /* Pods_BlogApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033F4E255EC75A794320FA76 /* Pods_BlogApp.framework */; };
 		28A523D584A4DA12A72F35A0 /* Pods_BlogAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD3CEAF603A93B548385A90 /* Pods_BlogAppTests.framework */; };
 		CB6CCEFD205D8DD6006BD708 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6CCEFC205D8DD6006BD708 /* AppDelegate.swift */; };
-		CB6CCF04205D8DD6006BD708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB6CCF03205D8DD6006BD708 /* Assets.xcassets */; };
-		CB6CCF07205D8DD6006BD708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB6CCF05205D8DD6006BD708 /* LaunchScreen.storyboard */; };
 		CB872E3D2076B87F009BB548 /* libDomainTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB872E3F2076B87F009BB548 /* libDomainTestsSupport.a */; };
 		CB872E402076B88F009BB548 /* libUITestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB872E412076B88F009BB548 /* libUITestsSupport.a */; };
 		CB872EA32076CFD2009BB548 /* libFeatures.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB872EA42076CFD2009BB548 /* libFeatures.a */; };
@@ -27,11 +25,9 @@
 		CB872EB82076D9E0009BB548 /* PushNotificationsLaunchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDCB206FFE46009B1CDF /* PushNotificationsLaunchers.swift */; };
 		CB872EB92076D9E0009BB548 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E9F206825040028D6FB /* NetworkService.swift */; };
 		CB872EBA2076D9F2009BB548 /* libFeatures.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB872EBB2076D9F2009BB548 /* libFeatures.a */; };
-		CBB63559205EB6BF00340E97 /* BlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB63558205EB6BF00340E97 /* BlogApp.swift */; };
 		CBCBBDC6206FE4D8009B1CDF /* UIFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDC5206FE4D8009B1CDF /* UIFlow.swift */; };
 		CBCBBDC8206FE80A009B1CDF /* PushNotificationHandlingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDC7206FE80A009B1CDF /* PushNotificationHandlingFlow.swift */; };
 		CBCBBDCC206FFE46009B1CDF /* PushNotificationsLaunchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDCB206FFE46009B1CDF /* PushNotificationsLaunchers.swift */; };
-		CBCBBDDC207018D1009B1CDF /* BlogAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDDB207018D1009B1CDF /* BlogAppTests.swift */; };
 		CBCBBDE720701D31009B1CDF /* ScreenLaunchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDE620701D31009B1CDF /* ScreenLaunchers.swift */; };
 		CBCBBDE920701F9B009B1CDF /* PresentationLaunchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDE820701F9B009B1CDF /* PresentationLaunchers.swift */; };
 		CBCBBDEB20702324009B1CDF /* ComponentLaunchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDEA20702324009B1CDF /* ComponentLaunchers.swift */; };
@@ -57,10 +53,8 @@
 		033F4E255EC75A794320FA76 /* Pods_BlogApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlogApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD3CEAF603A93B548385A90 /* Pods_BlogAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlogAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C40047F3D1278885949C4E /* Pods-BlogApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlogApp.release.xcconfig"; path = "../Pods/Target Support Files/Pods-BlogApp/Pods-BlogApp.release.xcconfig"; sourceTree = "<group>"; };
-		3805AD5EF972FD89493A086A /* Pods-BlogAppTestsSupport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlogAppTestsSupport.release.xcconfig"; path = "../Pods/Target Support Files/Pods-BlogAppTestsSupport/Pods-BlogAppTestsSupport.release.xcconfig"; sourceTree = "<group>"; };
 		7E0B066C05FD473FC6594FFC /* Pods_BlogAppTestsSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlogAppTestsSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80ADF5F05306345ACC4F1847 /* Pods-BlogAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlogAppTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-BlogAppTests/Pods-BlogAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		B11037AC3054729313BB45AC /* Pods-BlogAppTestsSupport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlogAppTestsSupport.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-BlogAppTestsSupport/Pods-BlogAppTestsSupport.debug.xcconfig"; sourceTree = "<group>"; };
 		C3B8F7F2F14A25D9B6C9F29E /* Pods-BlogAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlogAppTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-BlogAppTests/Pods-BlogAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB03CA22205DBBDD00DE0B91 /* libDomain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDomain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB03CA24205DBC0D00DE0B91 /* libPods-DomainTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-DomainTestsSupport.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,10 +69,7 @@
 		CB03CA85205EA48B00DE0B91 /* Layoutless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Layoutless.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6CCEF9205D8DD6006BD708 /* BlogApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6CCEFC205D8DD6006BD708 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB6CCF03205D8DD6006BD708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CB6CCF06205D8DD6006BD708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB6CCF08205D8DD6006BD708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB6CCF13205D8DD6006BD708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB6CCF36205D96A2006BD708 /* libDomain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDomain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6CCF5E205D9AE2006BD708 /* libUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB6CCF82205DA131006BD708 /* libDomainTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDomainTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,15 +89,13 @@
 		CB872EBB2076D9F2009BB548 /* libFeatures.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFeatures.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB63554205EB58100340E97 /* libDomainTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDomainTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB63555205EB58100340E97 /* libPlatformTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libPlatformTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBB63558205EB6BF00340E97 /* BlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogApp.swift; sourceTree = "<group>"; };
 		CBB6355D205EB75200340E97 /* libUITestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libUITestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBCBBDC5206FE4D8009B1CDF /* UIFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFlow.swift; sourceTree = "<group>"; };
 		CBCBBDC7206FE80A009B1CDF /* PushNotificationHandlingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationHandlingFlow.swift; sourceTree = "<group>"; };
 		CBCBBDCB206FFE46009B1CDF /* PushNotificationsLaunchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsLaunchers.swift; sourceTree = "<group>"; };
 		CBCBBDCD20700877009B1CDF /* PushNotificationHandlingFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationHandlingFlowTests.swift; sourceTree = "<group>"; };
 		CBCBBDD9207018D1009B1CDF /* BlogAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlogAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBCBBDDB207018D1009B1CDF /* BlogAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogAppTests.swift; sourceTree = "<group>"; };
-		CBCBBDDD207018D1009B1CDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBCBBDDD207018D1009B1CDF /* TestsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TestsInfo.plist; sourceTree = "<group>"; };
 		CBCBBDE620701D31009B1CDF /* ScreenLaunchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLaunchers.swift; sourceTree = "<group>"; };
 		CBCBBDE820701F9B009B1CDF /* PresentationLaunchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationLaunchers.swift; sourceTree = "<group>"; };
 		CBCBBDEA20702324009B1CDF /* ComponentLaunchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentLaunchers.swift; sourceTree = "<group>"; };
@@ -146,10 +135,8 @@
 			children = (
 				DD80F59E96D1B2C883C3C3E8 /* Pods-BlogApp.debug.xcconfig */,
 				C3B8F7F2F14A25D9B6C9F29E /* Pods-BlogAppTests.debug.xcconfig */,
-				B11037AC3054729313BB45AC /* Pods-BlogAppTestsSupport.debug.xcconfig */,
 				21C40047F3D1278885949C4E /* Pods-BlogApp.release.xcconfig */,
 				80ADF5F05306345ACC4F1847 /* Pods-BlogAppTests.release.xcconfig */,
-				3805AD5EF972FD89493A086A /* Pods-BlogAppTestsSupport.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -158,9 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				CB6CCEFB205D8DD6006BD708 /* Sources */,
-				CB6CCF10205D8DD6006BD708 /* Tests */,
 				CBEA6E9420681DDD0028D6FB /* Resources */,
-				CBCBBDDA207018D1009B1CDF /* BlogAppTests */,
 				CB6CCEFA205D8DD6006BD708 /* Products */,
 				2EFBBE7D137D01A8E070D3A7 /* Pods */,
 				D1E3D04EE93648498407CA6B /* Frameworks */,
@@ -187,15 +172,6 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		CB6CCF10205D8DD6006BD708 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				CBCBBDDB207018D1009B1CDF /* BlogAppTests.swift */,
-				CB6CCF13205D8DD6006BD708 /* Info.plist */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
 		CBCBBDC9206FE867009B1CDF /* Flows */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,21 +196,12 @@
 			path = Launchers;
 			sourceTree = "<group>";
 		};
-		CBCBBDDA207018D1009B1CDF /* BlogAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				CBCBBDDD207018D1009B1CDF /* Info.plist */,
-			);
-			path = BlogAppTests;
-			sourceTree = "<group>";
-		};
 		CBEA6E9420681DDD0028D6FB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				CBCBBDEE207284C0009B1CDF /* db.json */,
-				CB6CCF03205D8DD6006BD708 /* Assets.xcassets */,
-				CB6CCF05205D8DD6006BD708 /* LaunchScreen.storyboard */,
 				CB6CCF08205D8DD6006BD708 /* Info.plist */,
+				CBCBBDDD207018D1009B1CDF /* TestsInfo.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -243,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				CBEA6E9F206825040028D6FB /* NetworkService.swift */,
-				CBB63558205EB6BF00340E97 /* BlogApp.swift */,
 			);
 			path = UtilityServices;
 			sourceTree = "<group>";
@@ -377,8 +343,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBCBBDEF207284C0009B1CDF /* db.json in Resources */,
-				CB6CCF07205D8DD6006BD708 /* LaunchScreen.storyboard in Resources */,
-				CB6CCF04205D8DD6006BD708 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +468,6 @@
 				CBCBBDCC206FFE46009B1CDF /* PushNotificationsLaunchers.swift in Sources */,
 				CBCBBDE920701F9B009B1CDF /* PresentationLaunchers.swift in Sources */,
 				CBEA6E8E2067DF570028D6FB /* MainFlow.swift in Sources */,
-				CBB63559205EB6BF00340E97 /* BlogApp.swift in Sources */,
 				CBCBBDC8206FE80A009B1CDF /* PushNotificationHandlingFlow.swift in Sources */,
 				CBCBBDEB20702324009B1CDF /* ComponentLaunchers.swift in Sources */,
 				CBEA6EA0206825040028D6FB /* NetworkService.swift in Sources */,
@@ -519,7 +482,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBCBBDDC207018D1009B1CDF /* BlogAppTests.swift in Sources */,
 				CB872EB22076D9E0009BB548 /* UIFlow.swift in Sources */,
 				CB872EB42076D9E0009BB548 /* ServiceFactories.swift in Sources */,
 				CB872EB02076D9C7009BB548 /* UIFlowTests.swift in Sources */,
@@ -535,17 +497,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		CB6CCF05205D8DD6006BD708 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB6CCF06205D8DD6006BD708 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CB6CCF14205D8DD6006BD708 /* Debug */ = {
@@ -699,7 +650,7 @@
 			baseConfigurationReference = C3B8F7F2F14A25D9B6C9F29E /* Pods-BlogAppTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BlogAppTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/TestsInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = borlov.BlogAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -715,7 +666,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				INFOPLIST_FILE = BlogAppTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/TestsInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = borlov.BlogAppTests;

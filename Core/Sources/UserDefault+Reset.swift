@@ -8,11 +8,7 @@
 
 import Foundation
 
-
-
 extension UserDefaults {
-    //    @objc
-    //dynamic
     public func reset() {
         removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
         synchronize()
@@ -21,5 +17,5 @@ extension UserDefaults {
 
 
 public func preventsWeirdCrash() {
-    // not making this call resulted in urecognized selector on calling reset
+    // not making this call resulted in unrecognized selector on calling reset()
 }

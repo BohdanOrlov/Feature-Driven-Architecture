@@ -15,7 +15,7 @@ import Features
 
 extension WindowFrameFeature {
     static func launch(screenBounds: CGRect, didDefineScreenFrames: (CGRect) -> Void) {
-        WindowFrameFeature(screenBounds: screenBounds, splitScreen: true, didDefineScreenFrames: didDefineScreenFrames)
+        WindowFrameFeature(screenBounds: screenBounds, splitScreen: false, didDefineScreenFrames: didDefineScreenFrames)
     }
 }
 

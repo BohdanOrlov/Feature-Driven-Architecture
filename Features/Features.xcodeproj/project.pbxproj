@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		205C047C7CC5EDD95B60F5FA /* Pods_Features.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B57CC93936A146B47893F7 /* Pods_Features.framework */; };
 		251BC4C0AF792B3C8D583B38 /* Pods_FeaturesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9842066C61E23923416FDBEC /* Pods_FeaturesTests.framework */; };
-		CB872E522076C720009BB548 /* Features.m in Sources */ = {isa = PBXBuildFile; fileRef = CB872E512076C720009BB548 /* Features.m */; };
-		CB872E532076C720009BB548 /* Features.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB872E502076C720009BB548 /* Features.h */; };
-		CB872E732076C81A009BB548 /* FeaturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB872E722076C81A009BB548 /* FeaturesTests.swift */; };
 		CB872E752076C81A009BB548 /* libFeatures.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB872E4D2076C720009BB548 /* libFeatures.a */; };
 		CB872E7B2076C886009BB548 /* LoginScreenFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB872E5F2076C754009BB548 /* LoginScreenFeatureTests.swift */; };
 		CB872E7D2076CA07009BB548 /* libDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB872E7F2076CA07009BB548 /* libDomain.a */; };
@@ -60,7 +57,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				CB872E532076C720009BB548 /* Features.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,8 +68,6 @@
 		A3F9CA30B0DDD686FDFD4694 /* Pods-FeaturesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeaturesTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-FeaturesTests/Pods-FeaturesTests.release.xcconfig"; sourceTree = "<group>"; };
 		A7B57CC93936A146B47893F7 /* Pods_Features.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Features.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB872E4D2076C720009BB548 /* libFeatures.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFeatures.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB872E502076C720009BB548 /* Features.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Features.h; sourceTree = "<group>"; };
-		CB872E512076C720009BB548 /* Features.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Features.m; sourceTree = "<group>"; };
 		CB872E592076C73E009BB548 /* WindowFrameFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowFrameFeature.swift; sourceTree = "<group>"; };
 		CB872E5A2076C73E009BB548 /* WindowFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowFeature.swift; sourceTree = "<group>"; };
 		CB872E5B2076C73E009BB548 /* TabBarFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarFeature.swift; sourceTree = "<group>"; };
@@ -88,8 +82,7 @@
 		CB872E682076C75F009BB548 /* PushNotificationButtonFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationButtonFeature.swift; sourceTree = "<group>"; };
 		CB872E6A2076C763009BB548 /* LogoutButtonFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutButtonFeature.swift; sourceTree = "<group>"; };
 		CB872E702076C81A009BB548 /* FeaturesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeaturesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB872E722076C81A009BB548 /* FeaturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesTests.swift; sourceTree = "<group>"; };
-		CB872E742076C81A009BB548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB872E742076C81A009BB548 /* TestsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TestsInfo.plist; sourceTree = "<group>"; };
 		CB872E7F2076CA07009BB548 /* libDomain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDomain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB872E802076CA07009BB548 /* libUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB872E8B2076CB03009BB548 /* libDomainTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libDomainTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				CB872E4F2076C720009BB548 /* Sources */,
-				CB872E712076C81A009BB548 /* FeaturesTests */,
+				CB872E712076C81A009BB548 /* Resources */,
 				CB872E4E2076C720009BB548 /* Products */,
 				CB872E7C2076CA07009BB548 /* Frameworks */,
 				E43A1A7EC9DCD94BAF902856 /* Pods */,
@@ -152,8 +145,6 @@
 				CB872E662076C75C009BB548 /* Comments */,
 				CB872E692076C75F009BB548 /* Push notifications */,
 				CB872E6B2076C763009BB548 /* Logout */,
-				CB872E502076C720009BB548 /* Features.h */,
-				CB872E512076C720009BB548 /* Features.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -213,13 +204,12 @@
 			path = Logout;
 			sourceTree = "<group>";
 		};
-		CB872E712076C81A009BB548 /* FeaturesTests */ = {
+		CB872E712076C81A009BB548 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CB872E722076C81A009BB548 /* FeaturesTests.swift */,
-				CB872E742076C81A009BB548 /* Info.plist */,
+				CB872E742076C81A009BB548 /* TestsInfo.plist */,
 			);
-			path = FeaturesTests;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		CB872E7C2076CA07009BB548 /* Frameworks */ = {
@@ -441,7 +431,6 @@
 				CB872E922076CBA8009BB548 /* LoginScreenFeature.swift in Sources */,
 				CB872E972076CBA8009BB548 /* PushNotificationButtonFeature.swift in Sources */,
 				CB872E8F2076CBA8009BB548 /* WindowFeature.swift in Sources */,
-				CB872E522076C720009BB548 /* Features.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +450,6 @@
 				CB872EA02076CBA9009BB548 /* CommentsScreenFeature.swift in Sources */,
 				CB872E9C2076CBA9009BB548 /* LoginScreenFeature.swift in Sources */,
 				CB872E992076CBA9009BB548 /* WindowFeature.swift in Sources */,
-				CB872E732076C81A009BB548 /* FeaturesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,7 +599,7 @@
 			baseConfigurationReference = DBB18E64D22CC339305D52AD /* Pods-FeaturesTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FeaturesTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/TestsInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = borlov.FeaturesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -627,7 +615,7 @@
 			baseConfigurationReference = A3F9CA30B0DDD686FDFD4694 /* Pods-FeaturesTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FeaturesTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/TestsInfo.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = borlov.FeaturesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
