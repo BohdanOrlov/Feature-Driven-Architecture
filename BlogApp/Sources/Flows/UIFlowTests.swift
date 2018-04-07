@@ -35,9 +35,11 @@ class UIFlowTests: XCTestCase {
                                            .showComments ]
     var calledLaunchers = [Launchers]()
     
-    func test_GivenMockedLaunchers_WhenFlowStarted_ThenShowSendPushNotificationButtonCalled() {
+    func test_GivenMockedLaunchers_WhenFlowStarted_ThenExpectedLaunchersCalled() {
         stubLaunchers()
+        
         startFlow()
+        
         XCTAssertEqual(calledLaunchers, expectedLaunchers)
     }
     

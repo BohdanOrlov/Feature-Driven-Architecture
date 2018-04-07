@@ -8,6 +8,8 @@
 
 import UIKit
 import UI
+import Domain
+import Features
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowOwner {
