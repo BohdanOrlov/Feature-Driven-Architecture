@@ -9,17 +9,20 @@
 import Foundation
 import Core
 
-public protocol PushNotificationServiceProtocol: AnyObject {
-    var didReceivePush: ((PushNotification) -> Void)? { get set }
+public protocol PushNotificationServiceProtocol: AnyObject, Retaining {
+    var lastReceivedPush: ReadonlyObservable<PushNotification?> { get }
     func push(notification: PushNotification)
 }
 
 public class PushNotificationService: PushNotificationServiceProtocol {
-    public var didReceivePush: ((PushNotification) -> Void)?
+    public var lastReceivedPush: ReadonlyObservable<PushNotification?> {
+        return self.mutableLastReceivedPush.makeReadonly()
+    }
+    private var mutableLastReceivedPush = MutableObservable<PushNotification?>(nil)
     
     public init() {}
     
     public func push(notification: PushNotification) {
-        self.didReceivePush?(notification)
+        self.mutableLastReceivedPush.value = notification
     }
 }

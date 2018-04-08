@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CB49341B2067CEB8004C49EA /* libCoreTestsSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4933FE2067CD2D004C49EA /* libCoreTestsSupport.a */; };
 		CB49341C2067CEBD004C49EA /* libCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4933EE2067CD06004C49EA /* libCore.a */; };
+		CB872EC3207A42A4009BB548 /* AnyObject+Retain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB872EC2207A42A4009BB548 /* AnyObject+Retain.swift */; };
 		CBCBBDF3207297BF009B1CDF /* KeyPathBuildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDF2207297BF009B1CDF /* KeyPathBuildable.swift */; };
 		CBCBBDFF2075685A009B1CDF /* UserDefault+Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBBDFE2075685A009B1CDF /* UserDefault+Reset.swift */; };
 		CBEA6E892067D9CC0028D6FB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA6E882067D9CC0028D6FB /* Observable.swift */; };
@@ -51,6 +52,7 @@
 		CB4933FE2067CD2D004C49EA /* libCoreTestsSupport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCoreTestsSupport.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB49340B2067CD4D004C49EA /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB49340F2067CD4D004C49EA /* TestsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TestsInfo.plist; sourceTree = "<group>"; };
+		CB872EC2207A42A4009BB548 /* AnyObject+Retain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyObject+Retain.swift"; sourceTree = "<group>"; };
 		CBCBBDF2207297BF009B1CDF /* KeyPathBuildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPathBuildable.swift; sourceTree = "<group>"; };
 		CBCBBDFE2075685A009B1CDF /* UserDefault+Reset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefault+Reset.swift"; sourceTree = "<group>"; };
 		CBEA6E882067D9CC0028D6FB /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				CBCBBDF2207297BF009B1CDF /* KeyPathBuildable.swift */,
 				CBEA6E8F2067EB8A0028D6FB /* Weakify.swift */,
 				CBEA6E882067D9CC0028D6FB /* Observable.swift */,
+				CB872EC2207A42A4009BB548 /* AnyObject+Retain.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBCBBDF3207297BF009B1CDF /* KeyPathBuildable.swift in Sources */,
+				CB872EC3207A42A4009BB548 /* AnyObject+Retain.swift in Sources */,
 				CBEA6E902067EB8B0028D6FB /* Weakify.swift in Sources */,
 				CBEA6E892067D9CC0028D6FB /* Observable.swift in Sources */,
 				CBCBBDFF2075685A009B1CDF /* UserDefault+Reset.swift in Sources */,

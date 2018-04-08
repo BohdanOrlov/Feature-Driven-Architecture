@@ -19,6 +19,7 @@ public class CommentsScreenFeature {
          userId: Int,
          commentsRepository: UserCommentsRepository) {
         
+        commentsViewController.retain(self)
         commentsRepository.comments(userId: userId) { [weak commentsViewController] comments in
             commentsViewController?.data = .init(strings: comments.map{ $0.body })
         }

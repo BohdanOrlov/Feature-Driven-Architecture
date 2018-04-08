@@ -7,14 +7,18 @@
 //
 
 import Foundation
+import Core
 import Domain
 
 public final class FakePushNotificationService: PushNotificationServiceProtocol {
+    public var stubLastReceivedPush = MutableObservable<PushNotification?>(nil)
+    public var lastReceivedPush: ReadonlyObservable<PushNotification?> {
+        return stubLastReceivedPush.makeReadonly()
+    }
+    
     public init() {
         
     }
-    
-    public var didReceivePush: ((PushNotification) -> Void)?
     
     public func push(notification: PushNotification) {
         fatalError()

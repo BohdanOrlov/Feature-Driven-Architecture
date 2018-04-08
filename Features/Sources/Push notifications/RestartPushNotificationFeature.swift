@@ -4,17 +4,20 @@
 
 import Foundation
 import UIKit
+import Core
 import Domain
-
 
 public class RestartPushNotificationFeature {
     
     @discardableResult
     public init(pushNotificationService: PushNotificationServiceProtocol, didReceiveRestartRequest: @escaping () -> Void) {
-        pushNotificationService.didReceivePush = { notification in
-            if case .restart = notification {
+        observer = pushNotificationService.lastReceivedPush.observe { _, notification in
+            if case .restart? = notification {
                 didReceiveRestartRequest()
             }
         }
+        pushNotificationService.retain(self)
     }
+    
+    private let observer: AnyObject
 }

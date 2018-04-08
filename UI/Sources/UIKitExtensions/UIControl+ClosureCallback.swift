@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Core
 
 class ClosureBox {
     let closure: ()->()
