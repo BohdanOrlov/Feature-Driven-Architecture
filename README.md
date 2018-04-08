@@ -20,7 +20,7 @@ The project helps to understand:
 
 ## ⚙️ Modules
 
-![Modules](modules.png)
+<img src="modules.png" width="320">
 
 ## 🌟 Features
 Features describe single use-case or presentation requirement
