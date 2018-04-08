@@ -1,4 +1,4 @@
-#🏛 Feature Driven Architecture
+# 🏛 Feature Driven Architecture
 An iOS example project for a use case-driven architecture.
 
 ## ☝️ What is inside?
